@@ -10,11 +10,6 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var UserSegment: UISegmentedControl!
-    @IBOutlet weak var UserLable: UILabel!
-    @IBOutlet weak var UserName: UITextField!
-    @IBOutlet weak var PasswordLable: UILabel!
-    @IBOutlet weak var Password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
