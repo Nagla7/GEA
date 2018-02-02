@@ -14,11 +14,12 @@ import FirebaseDatabase
 class LoginViewController: UIViewController , UITextFieldDelegate {
     
     //username text field
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var GEA_Admin: UISegmentedControl!
-    let ref : DatabaseReference! = Database.database().reference()
+    //@IBOutlet weak var usernameTextField: UITextField!
+    //@IBOutlet weak var passwordTextField: UITextField!
     
+    let ref : DatabaseReference! = Database.database().reference()
+    @IBOutlet weak var passwordTextField: DesignableTextField!
+    @IBOutlet weak var usernameTextField: DesignableTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
@@ -58,9 +59,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         return true
     }
     
-
     @IBAction func loginAction(_ sender: Any) {
-
         
         if self.usernameTextField.text == "" || self.passwordTextField.text == "" {
             
@@ -71,28 +70,27 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
             self.present(alertController, animated: true, completion: nil)
             
         } else {
-            // determine if admin or gea
+
             // search database for the username ---> get the corresponding email
-            
-            let tree = (GEA_Admin.selectedSegmentIndex == 0) ? "GEAstaff" : "Admins"
-            print("!!!!!!?????!!!!!! ", tree)
-            ref.child(tree).queryOrdered(byChild: "username").queryEqual(toValue: self.usernameTextField.text!.lowercased()).observeSingleEvent(of: .value , with: { snapshot in
+            ref.child("Users").queryOrdered(byChild: "username").queryEqual(toValue: self.usernameTextField.text!.lowercased()).observeSingleEvent(of: .value , with: { snapshot in
                 if snapshot.exists() {
                     
                     //getting the email to login
                     var email = ""
+                    var type = ""
                     let data = snapshot.value as! [String: Any]
                     for (_,value) in data {
                         let user = value as? NSDictionary
-                        email = user!["Email"] as! String}
+                        email = user!["email"] as! String
+                        type = user!["type"] as! String
+                    }
                     
                     // login with email and password from firebase
                     Auth.auth().signIn(withEmail: email, password: self.passwordTextField.text!) { (user, error) in
                         if error == nil {
                             
                             //Go to the HomeViewController if the login is sucessful
-                            let page = (self.GEA_Admin.selectedSegmentIndex == 0) ? "gea" : "admin"
-                            let vc = self.storyboard?.instantiateViewController(withIdentifier: page)
+                            let vc = self.storyboard?.instantiateViewController(withIdentifier: type)
                             self.present(vc!, animated: true, completion: nil)
                             
                         } else {

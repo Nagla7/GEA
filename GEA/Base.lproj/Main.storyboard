@@ -89,6 +89,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96083921194076538" green="0.98821479082107544" blue="0.98430615663528442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="ZpJ-g5-FBj" eventType="touchUpInside" id="yPi-U4-xxH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP7-bE-qjj">
                                 <rect key="frame" x="126" y="504" width="123" height="30"/>
@@ -118,7 +121,8 @@
                         <viewLayoutGuide key="safeArea" id="AlV-e3-C2E"/>
                     </view>
                     <connections>
-                        <outlet property="usernameTextField" destination="ycP-Ur-NLK" id="BzA-PS-U0a"/>
+                        <outlet property="passwordTextField" destination="tiA-a8-AHn" id="EEd-vU-Lqw"/>
+                        <outlet property="usernameTextField" destination="ycP-Ur-NLK" id="LP1-j2-tmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7W-L0-L2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
