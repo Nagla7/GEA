@@ -118,7 +118,6 @@
                         <viewLayoutGuide key="safeArea" id="AlV-e3-C2E"/>
                     </view>
                     <connections>
-                        <outlet property="GEA_Admin" destination="5hO-s8-gbK" id="Z2f-yW-lJc"/>
                         <outlet property="usernameTextField" destination="ycP-Ur-NLK" id="BzA-PS-U0a"/>
                     </connections>
                 </viewController>
