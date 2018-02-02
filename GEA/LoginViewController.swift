@@ -20,6 +20,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
     let ref : DatabaseReference! = Database.database().reference()
     @IBOutlet weak var passwordTextField: DesignableTextField!
     @IBOutlet weak var usernameTextField: DesignableTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
