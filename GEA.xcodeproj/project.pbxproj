@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F893F43202143D700B76FA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F893F42202143D700B76FA9 /* ViewController.swift */; };
 		0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F893F4420215CFF00B76FA9 /* LoginViewController.swift */; };
+		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
 		616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DB9E2201F4D05000612D2 /* AppDelegate.swift */; };
 		616DB9E8201F4D05000612D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 616DB9E6201F4D05000612D2 /* Main.storyboard */; };
 		616DB9EB201F4D05000612D2 /* GEA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 616DB9E9201F4D05000612D2 /* GEA.xcdatamodeld */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		0F893F42202143D700B76FA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F893F4420215CFF00B76FA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1DF725442023EEE000900254 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4754AF1146F8231A8A99D636 /* Pods-GEA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEA/Pods-GEA.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				616DB9F1201F4D05000612D2 /* Info.plist */,
 				616DBA15201F4EC1000612D2 /* GoogleService-Info.plist */,
 				616DB9E9201F4D05000612D2 /* GEA.xcdatamodeld */,
+				1DF725442023EEE000900254 /* DesignableTextField.swift */,
 			);
 			path = GEA;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */,
 				616DB9EB201F4D05000612D2 /* GEA.xcdatamodeld in Sources */,
 				616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */,
+				1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

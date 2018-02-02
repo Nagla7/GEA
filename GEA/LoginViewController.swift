@@ -9,9 +9,14 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    //username text field
+    @IBOutlet weak var usernameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ///////////////////lee
+        
+        
         
         // Do any additional setup after loading the view.
     }
