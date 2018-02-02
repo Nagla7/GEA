@@ -13,27 +13,23 @@ import FirebaseDatabase
 
 class LoginViewController: UIViewController , UITextFieldDelegate {
     
-    //username text field
-    //@IBOutlet weak var usernameTextField: UITextField!
-    //@IBOutlet weak var passwordTextField: UITextField!
     
-    let ref : DatabaseReference! = Database.database().reference()
+    var ref : DatabaseReference! = nil
+//    let ref : DatabaseReference! = Database.database().reference()
     @IBOutlet weak var passwordTextField: DesignableTextField!
     @IBOutlet weak var usernameTextField: DesignableTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref =  Database.database().reference()
         usernameTextField.delegate = self
         passwordTextField.delegate = self
-        
-        ///////////////////lee
-        
-        
         
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func SelectUserTybe(_ sender: UISegmentedControl) {
+    ///////////////////////////Segment///////////////////////
+  /*  @IBAction func SelectUserTybe(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             print("GEA")
@@ -42,7 +38,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         default:
             print("none")
         }
-    }
+    }*/
     
     
     
@@ -70,11 +66,11 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
             
-        } else {
+        }     else {
 
             // search database for the username ---> get the corresponding email
             ref.child("Users").queryOrdered(byChild: "username").queryEqual(toValue: self.usernameTextField.text!.lowercased()).observeSingleEvent(of: .value , with: { snapshot in
-                if snapshot.exists() {
+                      if snapshot.exists() {
                     
                     //getting the email to login
                     var email = ""
@@ -122,6 +118,4 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
      // Pass the selected object to the new view controller.
      }
      */
-    
-}
-
+    }
