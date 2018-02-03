@@ -28,19 +28,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    ///////////////////////////Segment///////////////////////
-  /*  @IBAction func SelectUserTybe(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            print("GEA")
-        case 1:
-            print("Admin")
-        default:
-            print("none")
-        }
-    }*/
-    
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

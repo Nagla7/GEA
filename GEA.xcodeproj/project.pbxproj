@@ -10,6 +10,12 @@
 		0F893F43202143D700B76FA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F893F42202143D700B76FA9 /* ViewController.swift */; };
 		0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F893F4420215CFF00B76FA9 /* LoginViewController.swift */; };
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
+		6139158420256B4500834A61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6139158320256B4500834A61 /* GoogleService-Info.plist */; };
+		6139158520256B4500834A61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6139158320256B4500834A61 /* GoogleService-Info.plist */; };
+		6139158620256B4500834A61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6139158320256B4500834A61 /* GoogleService-Info.plist */; };
+		6139158820256B8400834A61 /* TextFields in Resources */ = {isa = PBXBuildFile; fileRef = 6139158720256B8400834A61 /* TextFields */; };
+		6139158920256B8400834A61 /* TextFields in Resources */ = {isa = PBXBuildFile; fileRef = 6139158720256B8400834A61 /* TextFields */; };
+		6139158A20256B8400834A61 /* TextFields in Resources */ = {isa = PBXBuildFile; fileRef = 6139158720256B8400834A61 /* TextFields */; };
 		616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DB9E2201F4D05000612D2 /* AppDelegate.swift */; };
 		616DB9E8201F4D05000612D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 616DB9E6201F4D05000612D2 /* Main.storyboard */; };
 		616DB9EB201F4D05000612D2 /* GEA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 616DB9E9201F4D05000612D2 /* GEA.xcdatamodeld */; };
@@ -17,9 +23,6 @@
 		616DB9F0201F4D05000612D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */; };
 		616DB9FB201F4D05000612D2 /* GEATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DB9FA201F4D05000612D2 /* GEATests.swift */; };
 		616DBA06201F4D05000612D2 /* GEAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DBA05201F4D05000612D2 /* GEAUITests.swift */; };
-		61CB702420247B9C005DEB11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61CB702320247B9C005DEB11 /* GoogleService-Info.plist */; };
-		61CB702520247B9C005DEB11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61CB702320247B9C005DEB11 /* GoogleService-Info.plist */; };
-		61CB702620247B9C005DEB11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61CB702320247B9C005DEB11 /* GoogleService-Info.plist */; };
 		75A70878F28412236098A55A /* Pods_GEA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */; };
 		8E8E870153799640748A2F8B /* Pods_GEAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */; };
 		AC34384126183F2CF96DDFC9 /* Pods_GEATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */; };
@@ -49,6 +52,8 @@
 		35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4754AF1146F8231A8A99D636 /* Pods-GEA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEA/Pods-GEA.release.xcconfig"; sourceTree = "<group>"; };
+		6139158320256B4500834A61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6139158720256B8400834A61 /* TextFields */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TextFields; sourceTree = "<group>"; };
 		616DB9DF201F4D05000612D2 /* GEA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GEA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		616DB9E2201F4D05000612D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		616DB9E7201F4D05000612D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 		616DBA01201F4D05000612D2 /* GEAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GEAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		616DBA05201F4D05000612D2 /* GEAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEAUITests.swift; sourceTree = "<group>"; };
 		616DBA07201F4D05000612D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61CB702320247B9C005DEB11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C4AAC98DCAFDDA62AD11BD3 /* Pods-GEAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEAUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEAUITests/Pods-GEAUITests.release.xcconfig"; sourceTree = "<group>"; };
 		745C230E4AC0F7E622AEC984 /* Pods-GEATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEATests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEATests/Pods-GEATests.debug.xcconfig"; sourceTree = "<group>"; };
 		76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,7 @@
 		616DB9D6201F4D05000612D2 = {
 			isa = PBXGroup;
 			children = (
+				6139158720256B8400834A61 /* TextFields */,
 				616DB9E1201F4D05000612D2 /* GEA */,
 				616DB9F9201F4D05000612D2 /* GEATests */,
 				616DBA04201F4D05000612D2 /* GEAUITests */,
@@ -130,7 +135,7 @@
 				616DB9EC201F4D05000612D2 /* Assets.xcassets */,
 				616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */,
 				616DB9F1201F4D05000612D2 /* Info.plist */,
-				61CB702320247B9C005DEB11 /* GoogleService-Info.plist */,
+				6139158320256B4500834A61 /* GoogleService-Info.plist */,
 				616DB9E9201F4D05000612D2 /* GEA.xcdatamodeld */,
 				1DF725442023EEE000900254 /* DesignableTextField.swift */,
 			);
@@ -296,7 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				616DB9F0201F4D05000612D2 /* LaunchScreen.storyboard in Resources */,
-				61CB702420247B9C005DEB11 /* GoogleService-Info.plist in Resources */,
+				6139158820256B8400834A61 /* TextFields in Resources */,
+				6139158420256B4500834A61 /* GoogleService-Info.plist in Resources */,
 				616DB9ED201F4D05000612D2 /* Assets.xcassets in Resources */,
 				616DB9E8201F4D05000612D2 /* Main.storyboard in Resources */,
 			);
@@ -306,7 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61CB702520247B9C005DEB11 /* GoogleService-Info.plist in Resources */,
+				6139158920256B8400834A61 /* TextFields in Resources */,
+				6139158520256B4500834A61 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +321,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61CB702620247B9C005DEB11 /* GoogleService-Info.plist in Resources */,
+				6139158A20256B8400834A61 /* TextFields in Resources */,
+				6139158620256B4500834A61 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
