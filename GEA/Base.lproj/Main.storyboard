@@ -233,7 +233,7 @@
         <!--Item 1-->
         <scene sceneID="mHT-Wp-4xl">
             <objects>
-                <viewController id="2v1-sy-ojP" sceneMemberID="viewController">
+                <viewController id="2v1-sy-ojP" customClass="AddGEAViewController" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88q-eV-n7K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -315,6 +315,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96083921194076538" green="0.98821479082107544" blue="0.98430615663528442" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Add "/>
+                                <connections>
+                                    <action selector="createAccountAction:" destination="2v1-sy-ojP" eventType="touchUpInside" id="QwQ-eB-M4I"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yzh-D1-ua4" customClass="DesignableTextField" customModule="GEA" customModuleProvider="target">
                                 <rect key="frame" x="16" y="416" width="343" height="45"/>
@@ -346,6 +349,13 @@
                         <viewLayoutGuide key="safeArea" id="s36-Wf-6vj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="RTN-bj-FRb"/>
+                    <connections>
+                        <outlet property="email" destination="iAc-cS-7z1" id="MuI-lB-eG8"/>
+                        <outlet property="fname" destination="1PX-ug-5f1" id="YNN-mo-j4w"/>
+                        <outlet property="lname" destination="RlZ-6F-LkI" id="Oxn-zz-Z5U"/>
+                        <outlet property="password" destination="Yzh-D1-ua4" id="tag-R2-mbw"/>
+                        <outlet property="username" destination="Bzu-Ws-tfM" id="UBB-Rg-GIM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H63-Xd-Nc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

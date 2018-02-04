@@ -24,6 +24,7 @@
 		616DB9FB201F4D05000612D2 /* GEATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DB9FA201F4D05000612D2 /* GEATests.swift */; };
 		616DBA06201F4D05000612D2 /* GEAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DBA05201F4D05000612D2 /* GEAUITests.swift */; };
 		75A70878F28412236098A55A /* Pods_GEA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */; };
+		87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87271F7C20270D4400D9F856 /* AddGEAViewController.swift */; };
 		8E8E870153799640748A2F8B /* Pods_GEAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */; };
 		AC34384126183F2CF96DDFC9 /* Pods_GEATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		6C4AAC98DCAFDDA62AD11BD3 /* Pods-GEAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEAUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEAUITests/Pods-GEAUITests.release.xcconfig"; sourceTree = "<group>"; };
 		745C230E4AC0F7E622AEC984 /* Pods-GEATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEATests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEATests/Pods-GEATests.debug.xcconfig"; sourceTree = "<group>"; };
 		76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87271F7C20270D4400D9F856 /* AddGEAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGEAViewController.swift; sourceTree = "<group>"; };
 		A03264A9D82A9B033256B23C /* Pods-GEAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEAUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEAUITests/Pods-GEAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9CBA84A1F8C8297A1742E72 /* Pods-GEATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEATests/Pods-GEATests.release.xcconfig"; sourceTree = "<group>"; };
 		F20FFC1AA9EE29CD8A58D3E9 /* Pods-GEA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEA/Pods-GEA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				616DB9E2201F4D05000612D2 /* AppDelegate.swift */,
 				616DB9E6201F4D05000612D2 /* Main.storyboard */,
+				87271F7C20270D4400D9F856 /* AddGEAViewController.swift */,
 				0F893F4420215CFF00B76FA9 /* LoginViewController.swift */,
 				616DB9EC201F4D05000612D2 /* Assets.xcassets */,
 				616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */,
@@ -489,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */,
 				0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */,
 				616DB9EB201F4D05000612D2 /* GEA.xcdatamodeld in Sources */,
 				616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */,
