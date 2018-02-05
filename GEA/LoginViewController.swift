@@ -16,13 +16,14 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
     
     var ref : DatabaseReference! = nil
 //    let ref : DatabaseReference! = Database.database().reference()
-    @IBOutlet weak var passwordTextField: DesignableTextField!
-    @IBOutlet weak var usernameTextField: DesignableTextField!
+    @IBOutlet var username: HoshiTextField!
+    
+    @IBOutlet var passwordTextField: HoshiTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref =  Database.database().reference()
-        usernameTextField.delegate = self
+        username.delegate = self
         passwordTextField.delegate = self
         
         // Do any additional setup after loading the view.
@@ -46,7 +47,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
     
     @IBAction func loginAction(_ sender: Any) {
         
-        if self.usernameTextField.text == "" || self.passwordTextField.text == "" {
+        if self.username.text == "" || self.passwordTextField.text == "" {
             
             //Alert to tell the user that there was an error because they didn't fill anything in the textfields
             let alertController = UIAlertController(title: "Error", message: "Please enter an username and password.", preferredStyle: .alert)
@@ -57,7 +58,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
         }     else {
 
             // search database for the username ---> get the corresponding email
-            ref.child("Users").queryOrdered(byChild: "username").queryEqual(toValue: self.usernameTextField.text!.lowercased()).observeSingleEvent(of: .value , with: { snapshot in
+            ref.child("Users").queryOrdered(byChild: "username").queryEqual(toValue: self.username.text!.lowercased()).observeSingleEvent(of: .value , with: { snapshot in
                       if snapshot.exists() {
                     
                     //getting the email to login
