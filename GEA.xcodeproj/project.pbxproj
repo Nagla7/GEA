@@ -12,6 +12,7 @@
 		0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F893F4420215CFF00B76FA9 /* LoginViewController.swift */; };
 		0FB176E6202A878700931605 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB176E5202A878700931605 /* CustomButton.swift */; };
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
+		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
 		1DFAF374202BA629001763C4 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFAF373202BA629001763C4 /* Popup.swift */; };
 		6139158420256B4500834A61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6139158320256B4500834A61 /* GoogleService-Info.plist */; };
 		6139158520256B4500834A61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6139158320256B4500834A61 /* GoogleService-Info.plist */; };
@@ -55,6 +56,7 @@
 		0F893F4420215CFF00B76FA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0FB176E5202A878700931605 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1DF725442023EEE000900254 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassowrdController.swift; sourceTree = "<group>"; };
 		1DFAF373202BA629001763C4 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 				616DB9E2201F4D05000612D2 /* AppDelegate.swift */,
 				616DB9E6201F4D05000612D2 /* Main.storyboard */,
 				0FB176E5202A878700931605 /* CustomButton.swift */,
+				1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */,
 				0F4EE307202A5B8800EE2725 /* CustomView.swift */,
 				87271F7C20270D4400D9F856 /* AddGEAViewController.swift */,
 				0F893F4420215CFF00B76FA9 /* LoginViewController.swift */,
@@ -516,6 +519,7 @@
 				E3D0D83020284832006ED71C /* TextFieldEffects.swift in Sources */,
 				0F4EE308202A5B8800EE2725 /* CustomView.swift in Sources */,
 				1DFAF374202BA629001763C4 /* Popup.swift in Sources */,
+				1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */,
 				0FB176E6202A878700931605 /* CustomButton.swift in Sources */,
 				E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */,
 				87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */,
