@@ -11,7 +11,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var View: UIView!
-    @IBOutlet weak var Lable: UILabel!
+    @IBOutlet weak var RegulationText: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         

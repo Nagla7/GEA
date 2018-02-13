@@ -14,7 +14,6 @@
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
 		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
 		1DFAF374202BA629001763C4 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFAF373202BA629001763C4 /* Popup.swift */; };
-		6129138E203205B0004AF11F /* RegulationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129138D203205B0004AF11F /* RegulationsTableViewController.swift */; };
 		61291390203207CC004AF11F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6129138F203207CC004AF11F /* TableViewCell.swift */; };
 		6139158420256B4500834A61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6139158320256B4500834A61 /* GoogleService-Info.plist */; };
 		6139158520256B4500834A61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6139158320256B4500834A61 /* GoogleService-Info.plist */; };
@@ -26,6 +25,8 @@
 		616DB9F0201F4D05000612D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */; };
 		616DB9FB201F4D05000612D2 /* GEATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DB9FA201F4D05000612D2 /* GEATests.swift */; };
 		616DBA06201F4D05000612D2 /* GEAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616DBA05201F4D05000612D2 /* GEAUITests.swift */; };
+		61EA47FF2033146200AE3373 /* RegulationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA47FE2033146200AE3373 /* RegulationController.swift */; };
+		61EA480120334D0100AE3373 /* RegulationControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61EA480020334D0100AE3373 /* RegulationControllerTableViewCell.swift */; };
 		75A70878F28412236098A55A /* Pods_GEA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */; };
 		87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87271F7C20270D4400D9F856 /* AddGEAViewController.swift */; };
 		8E8E870153799640748A2F8B /* Pods_GEAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */; };
@@ -63,7 +64,6 @@
 		35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4754AF1146F8231A8A99D636 /* Pods-GEA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEA.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEA/Pods-GEA.release.xcconfig"; sourceTree = "<group>"; };
-		6129138D203205B0004AF11F /* RegulationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulationsTableViewController.swift; sourceTree = "<group>"; };
 		6129138F203207CC004AF11F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6139158320256B4500834A61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		616DB9DF201F4D05000612D2 /* GEA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GEA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +79,8 @@
 		616DBA01201F4D05000612D2 /* GEAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GEAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		616DBA05201F4D05000612D2 /* GEAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEAUITests.swift; sourceTree = "<group>"; };
 		616DBA07201F4D05000612D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61EA47FE2033146200AE3373 /* RegulationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulationController.swift; sourceTree = "<group>"; };
+		61EA480020334D0100AE3373 /* RegulationControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegulationControllerTableViewCell.swift; sourceTree = "<group>"; };
 		6C4AAC98DCAFDDA62AD11BD3 /* Pods-GEAUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEAUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEAUITests/Pods-GEAUITests.release.xcconfig"; sourceTree = "<group>"; };
 		745C230E4AC0F7E622AEC984 /* Pods-GEATests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEATests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEATests/Pods-GEATests.debug.xcconfig"; sourceTree = "<group>"; };
 		76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,8 +150,9 @@
 				E3D0D829202847F8006ED71C /* Text */,
 				616DB9E2201F4D05000612D2 /* AppDelegate.swift */,
 				616DB9E6201F4D05000612D2 /* Main.storyboard */,
+				61EA47FE2033146200AE3373 /* RegulationController.swift */,
 				6129138F203207CC004AF11F /* TableViewCell.swift */,
-				6129138D203205B0004AF11F /* RegulationsTableViewController.swift */,
+				61EA480020334D0100AE3373 /* RegulationControllerTableViewCell.swift */,
 				0FB176E5202A878700931605 /* CustomButton.swift */,
 				1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */,
 				0F4EE307202A5B8800EE2725 /* CustomView.swift */,
@@ -522,15 +525,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61EA47FF2033146200AE3373 /* RegulationController.swift in Sources */,
 				61291390203207CC004AF11F /* TableViewCell.swift in Sources */,
 				E3D0D83020284832006ED71C /* TextFieldEffects.swift in Sources */,
+				61EA480120334D0100AE3373 /* RegulationControllerTableViewCell.swift in Sources */,
 				0F4EE308202A5B8800EE2725 /* CustomView.swift in Sources */,
 				1DFAF374202BA629001763C4 /* Popup.swift in Sources */,
 				1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */,
 				0FB176E6202A878700931605 /* CustomButton.swift in Sources */,
 				E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */,
 				87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */,
-				6129138E203205B0004AF11F /* RegulationsTableViewController.swift in Sources */,
 				0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */,
 				616DB9EB201F4D05000612D2 /* GEA.xcdatamodeld in Sources */,
 				616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */,
