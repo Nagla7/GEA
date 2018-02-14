@@ -10,7 +10,7 @@ import UIKit
 
 class RegulationControllerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var RegulationText: UITextView!
+  @IBOutlet weak var RegulationText: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

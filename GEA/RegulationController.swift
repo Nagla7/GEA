@@ -27,13 +27,10 @@ class RegulationController: UIViewController, UITableViewDelegate, UITableViewDa
             //Blure.isHidden = true
             tableView.delegate=self
             tableView.dataSource=self
-            self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
             AddView.layer.shadowColor = UIColor.black.cgColor
             AddView.layer.shadowOpacity = 0.5
             AddView.layer.shadowOffset = CGSize(width: -2, height: 2)
             AddView.layer.shadowRadius = 1
-            
-            tableView.register(UITableViewCell.self , forCellReuseIdentifier: "cell")
             ref=Database.database().reference()
             dbHandle = ref?.child("Regulations").observe(.value, with: { (snapshot) in
                 let deta=snapshot.value as! [String:Any]
@@ -58,8 +55,6 @@ class RegulationController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            print("$$$$$$$$$$"
-                ,Regulations.count)
             return Regulations.count
         }
         
@@ -71,8 +66,7 @@ class RegulationController: UIViewController, UITableViewDelegate, UITableViewDa
             
             Regulation = Regulations[indexPath.row]
             
-            cell.RegulationText.text = Regulation?["Description"] as? String
-            print("$$$$$$$$$$",Regulation?["Description"])
+            cell.RegulationText.text = Regulation?["Description"] as! String
             
             return(cell)
         }
