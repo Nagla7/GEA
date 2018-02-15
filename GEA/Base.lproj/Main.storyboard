@@ -95,6 +95,9 @@
                                         <state key="normal" title="Manage accounts" image="group (2)">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="7WH-BG-0bp" kind="push" id="Rsy-AK-f8e"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -544,23 +547,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a7W-L0-L2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="-787"/>
+            <point key="canvasLocation" x="-3002" y="-877"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="Jac-sB-Czs">
+        <!--Manage Accounts-->
+        <scene sceneID="Bud-yN-QA2">
             <objects>
-                <viewController id="c1H-J3-lGR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uv2-2W-XrG">
+                <viewController id="7WH-BG-0bp" customClass="ManageAccounts" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cHX-KD-pPS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-mc-R1o">
+                                <rect key="frame" x="0.0" y="78" width="375" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="GEA Staff"/>
+                                    <segment title="Customer"/>
+                                    <segment title="Service Provider"/>
+                                </segments>
+                                <color key="tintColor" red="0.1215686275" green="0.74117647060000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="7WH-BG-0bp" eventType="valueChanged" id="q5r-qr-2RV"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zLl-p3-NzA">
+                                <rect key="frame" x="41" y="204" width="292" height="321"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zfh-PV-z3f"/>
+                        <viewLayoutGuide key="safeArea" id="XIR-Nn-PKu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="WPK-f9-AqB"/>
+                    <navigationItem key="navigationItem" id="09L-hJ-OmD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XSF-d3-0LB">
+                            <connections>
+                                <segue destination="2v1-sy-ojP" kind="push" id="oGQ-Au-ejC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentControl" destination="Bfd-mc-R1o" id="qwS-bl-3uW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RIQ-WP-WBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxi-jG-hqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="210"/>
+            <point key="canvasLocation" x="-1538.4000000000001" y="-843.32833583208401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mwy-UH-GCD">
@@ -1105,7 +1137,7 @@
             </objects>
             <point key="canvasLocation" x="-452" y="2515.5922038980511"/>
         </scene>
-        <!--Item 1-->
+        <!--Add Gea-->
         <scene sceneID="mHT-Wp-4xl">
             <objects>
                 <viewController id="2v1-sy-ojP" customClass="AddGEAViewController" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
@@ -1362,18 +1394,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add GEA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgD-tR-hHH">
-                                <rect key="frame" x="7" y="52" width="360" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="s36-Wf-6vj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="RTN-bj-FRb"/>
+                    <navigationItem key="navigationItem" title="Add Gea" id="Ads-A6-Dqn"/>
                     <connections>
                         <outlet property="Password" destination="1Sg-D9-Peb" id="wGt-nr-udu"/>
                         <outlet property="email" destination="wAv-Bm-lph" id="x8a-ZS-MUu"/>
@@ -1384,25 +1410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H63-Xd-Nc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="-456"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="HHf-VX-7qM">
-            <objects>
-                <tabBarController id="E9Y-hl-p9n" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YSi-0a-Hr2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="2v1-sy-ojP" kind="relationship" relationship="viewControllers" id="JcB-E7-cDo"/>
-                        <segue destination="c1H-J3-lGR" kind="relationship" relationship="viewControllers" id="QhT-Lh-e3d"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kTX-My-C2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1540" y="-124"/>
+            <point key="canvasLocation" x="-620" y="-843"/>
         </scene>
         <!--Reset Passowrd Controller-->
         <scene sceneID="9sf-i7-0Js">
@@ -1509,7 +1517,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tau-QF-EP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-791" y="-788"/>
+            <point key="canvasLocation" x="-3882" y="-878"/>
         </scene>
         <!--Venues Table1 View Controller-->
         <scene sceneID="iRW-7a-1cF">
