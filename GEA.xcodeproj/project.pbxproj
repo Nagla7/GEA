@@ -11,11 +11,11 @@
 		0F893F43202143D700B76FA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F893F42202143D700B76FA9 /* ViewController.swift */; };
 		0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F893F4420215CFF00B76FA9 /* LoginViewController.swift */; };
 		0FB176E6202A878700931605 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB176E5202A878700931605 /* CustomButton.swift */; };
+		1D68DC1320359CB500865E85 /* AddVenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D68DC1220359CB500865E85 /* AddVenuesViewController.swift */; };
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
 		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
 		1DFAF374202BA629001763C4 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFAF373202BA629001763C4 /* Popup.swift */; };
 		2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */; };
-		2911F5D320357017005E28A2 /* AddVenuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D220357016005E28A2 /* AddVenuesController.swift */; };
 		29E36CAA2035811D008DD9FE /* VenuesTable1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */; };
 		29E36CAC20358E39008DD9FE /* GEASettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */; };
 		29E36CAE20358E52008DD9FE /* AdminSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CAD20358E52008DD9FE /* AdminSettingViewController.swift */; };
@@ -63,11 +63,11 @@
 		0F893F42202143D700B76FA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0F893F4420215CFF00B76FA9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0FB176E5202A878700931605 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1D68DC1220359CB500865E85 /* AddVenuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVenuesViewController.swift; sourceTree = "<group>"; };
 		1DF725442023EEE000900254 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassowrdController.swift; sourceTree = "<group>"; };
 		1DFAF373202BA629001763C4 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewCell.swift; sourceTree = "<group>"; };
-		2911F5D220357016005E28A2 /* AddVenuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddVenuesController.swift; path = ../../../Desktop/GEA/GEA/AddVenuesController.swift; sourceTree = "<group>"; };
 		29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesTable1ViewController.swift; sourceTree = "<group>"; };
 		29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEASettingViewController.swift; sourceTree = "<group>"; };
 		29E36CAD20358E52008DD9FE /* AdminSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSettingViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +166,6 @@
 				61EA47FE2033146200AE3373 /* RegulationController.swift */,
 				6129138F203207CC004AF11F /* TableViewCell.swift */,
 				61EA480020334D0100AE3373 /* RegulationControllerTableViewCell.swift */,
-				2911F5D220357016005E28A2 /* AddVenuesController.swift */,
 				0FB176E5202A878700931605 /* CustomButton.swift */,
 				1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */,
 				2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */,
@@ -233,6 +232,7 @@
 				E3D0D82C20284832006ED71C /* Info.plist */,
 				E3D0D82B20284832006ED71C /* TextFieldEffects.h */,
 				E3D0D82D20284832006ED71C /* TextFieldEffects.swift */,
+				1D68DC1220359CB500865E85 /* AddVenuesViewController.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -542,6 +542,7 @@
 			files = (
 				29E36CAA2035811D008DD9FE /* VenuesTable1ViewController.swift in Sources */,
 				61EA47FF2033146200AE3373 /* RegulationController.swift in Sources */,
+				1D68DC1320359CB500865E85 /* AddVenuesViewController.swift in Sources */,
 				61291390203207CC004AF11F /* TableViewCell.swift in Sources */,
 				29E36CAC20358E39008DD9FE /* GEASettingViewController.swift in Sources */,
 				E3D0D83020284832006ED71C /* TextFieldEffects.swift in Sources */,
@@ -549,7 +550,6 @@
 				0F4EE308202A5B8800EE2725 /* CustomView.swift in Sources */,
 				1DFAF374202BA629001763C4 /* Popup.swift in Sources */,
 				1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */,
-				2911F5D320357017005E28A2 /* AddVenuesController.swift in Sources */,
 				0FB176E6202A878700931605 /* CustomButton.swift in Sources */,
 				E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */,
 				87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */,
