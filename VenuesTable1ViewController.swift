@@ -5,7 +5,6 @@
 //  Created by Wejdan Aziz on 14/02/2018.
 //  Copyright © 2018 com.GP.ET. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -13,7 +12,7 @@ import FirebaseDatabase
 
 
 class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITableViewDelegate  {
-
+    
     @IBOutlet weak var VenuesTable: UITableView!
     var venues = [NSDictionary]()
     var dbHandle:DatabaseHandle?
@@ -44,11 +43,11 @@ class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITa
     }
     
     
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return venues.count
     }
     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  VenuesTable?.dequeueReusableCell(withIdentifier :"Vcell", for: indexPath) as! VenuesTableViewCell
         let venue : NSDictionary?
         venue = venues[indexPath.row]
