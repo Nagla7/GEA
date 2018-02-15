@@ -10,6 +10,9 @@ import UIKit
 
 class ManageAccounts: UIViewController {
 
+    @IBOutlet weak var tableOne: UITableView!
+    @IBOutlet weak var tableTwo: UITableView!
+    @IBOutlet weak var tableThree: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +26,23 @@ class ManageAccounts: UIViewController {
     }
     
 
-    @IBAction func indexChanged(_ sender: Any) {
-        switch segmentControl.selectedSegmentIndex {
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
         case 0:
             print("first")
+            tableOne.isHidden=false
+            tableTwo.isHidden=true
+            tableThree.isHidden=true
         case 1:
             print("second")
+            tableOne.isHidden=true
+            tableTwo.isHidden=false
+            tableThree.isHidden=true
         case 2:
             print("third")
+            tableOne.isHidden=true
+            tableTwo.isHidden=true
+            tableThree.isHidden=false
         default:
             break
         }
