@@ -30,19 +30,24 @@ class ManageAccounts: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             print("first")
+            tableThree.isHidden=true
             tableOne.isHidden=false
             tableTwo.isHidden=true
-            tableThree.isHidden=true
+            
+            
+            
         case 1:
             print("second")
-            tableOne.isHidden=true
             tableTwo.isHidden=false
+            tableOne.isHidden=true
             tableThree.isHidden=true
+            
         case 2:
             print("third")
+            tableThree.isHidden=false
             tableOne.isHidden=true
             tableTwo.isHidden=true
-            tableThree.isHidden=false
+            
         default:
             break
         }
