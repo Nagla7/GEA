@@ -557,20 +557,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-mc-R1o">
-                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <segments>
-                                    <segment title="GEA Staff"/>
-                                    <segment title="Customer"/>
-                                    <segment title="Service Provider"/>
-                                </segments>
-                                <color key="tintColor" red="0.1215686275" green="0.74117647060000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="indexChanged:" destination="7WH-BG-0bp" eventType="valueChanged" id="q5r-qr-2RV"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zLl-p3-NzA">
-                                <rect key="frame" x="32" y="150" width="300" height="403"/>
+                                <rect key="frame" x="32" y="140" width="300" height="413"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.85815054180000006" green="0.3261989951" blue="0.2352232635" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -589,7 +577,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zkM-IA-PEw">
-                                <rect key="frame" x="42" y="167" width="287" height="403"/>
+                                <rect key="frame" x="42" y="157" width="287" height="413"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="1" green="0.62404265020000005" blue="0.7477436838" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -608,7 +596,7 @@
                                 </connections>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x5c-NQ-rP7">
-                                <rect key="frame" x="36" y="166" width="293" height="403"/>
+                                <rect key="frame" x="36" y="156" width="293" height="413"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.1215686275" green="0.74117647060000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
@@ -634,6 +622,21 @@
                                     <segue destination="2v1-sy-ojP" kind="push" id="gLl-Cy-fi5"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-mc-R1o">
+                                <rect key="frame" x="0.0" y="64" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qCR-tn-Gyo"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="GEA Staff"/>
+                                    <segment title="Customer"/>
+                                    <segment title="Service Provider"/>
+                                </segments>
+                                <color key="tintColor" red="0.1215686275" green="0.74117647060000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="7WH-BG-0bp" eventType="valueChanged" id="q5r-qr-2RV"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -641,6 +644,8 @@
                             <constraint firstItem="x5c-NQ-rP7" firstAttribute="trailing" secondItem="zkM-IA-PEw" secondAttribute="trailing" id="5MO-Js-hZh"/>
                             <constraint firstItem="x5c-NQ-rP7" firstAttribute="leading" secondItem="XIR-Nn-PKu" secondAttribute="leading" constant="36" id="5zZ-XN-1lg"/>
                             <constraint firstItem="x5c-NQ-rP7" firstAttribute="top" secondItem="Bfd-mc-R1o" secondAttribute="bottom" constant="52" id="6sY-zw-plZ"/>
+                            <constraint firstItem="Bfd-mc-R1o" firstAttribute="leading" secondItem="XIR-Nn-PKu" secondAttribute="leading" id="Buz-vT-ky8"/>
+                            <constraint firstItem="zLl-p3-NzA" firstAttribute="top" secondItem="Bfd-mc-R1o" secondAttribute="bottom" constant="36" id="IkL-vV-Pid"/>
                             <constraint firstAttribute="trailing" secondItem="Bfd-mc-R1o" secondAttribute="trailing" id="OIZ-Zb-1fP"/>
                             <constraint firstItem="XIR-Nn-PKu" firstAttribute="bottom" secondItem="zLl-p3-NzA" secondAttribute="bottom" constant="114" id="OoM-91-aCm"/>
                             <constraint firstItem="zLl-p3-NzA" firstAttribute="leading" secondItem="XIR-Nn-PKu" secondAttribute="leading" constant="32" id="Vjn-Qd-44i"/>
@@ -649,15 +654,15 @@
                             <constraint firstItem="XIR-Nn-PKu" firstAttribute="bottom" secondItem="x5c-NQ-rP7" secondAttribute="bottom" constant="98" id="fyp-bO-CQZ"/>
                             <constraint firstItem="Bfd-mc-R1o" firstAttribute="leading" secondItem="cHX-KD-pPS" secondAttribute="leading" id="iBH-Pr-jtK"/>
                             <constraint firstItem="zLl-p3-NzA" firstAttribute="centerX" secondItem="x5c-NQ-rP7" secondAttribute="centerX" id="jZ4-gL-sRb"/>
+                            <constraint firstItem="Bfd-mc-R1o" firstAttribute="top" secondItem="XIR-Nn-PKu" secondAttribute="top" id="lE7-cO-Rm6"/>
                             <constraint firstItem="zkM-IA-PEw" firstAttribute="top" secondItem="Bfd-mc-R1o" secondAttribute="bottom" constant="53" id="pXi-f1-4Hf"/>
                             <constraint firstItem="zLl-p3-NzA" firstAttribute="top" secondItem="Bfd-mc-R1o" secondAttribute="bottom" constant="36" id="pvc-fz-its"/>
-                            <constraint firstItem="Bfd-mc-R1o" firstAttribute="top" secondItem="XIR-Nn-PKu" secondAttribute="top" constant="22" id="uK8-Pq-XVb"/>
+                            <constraint firstItem="Bfd-mc-R1o" firstAttribute="top" secondItem="XIR-Nn-PKu" secondAttribute="top" id="uK8-Pq-XVb"/>
+                            <constraint firstItem="Bfd-mc-R1o" firstAttribute="trailing" secondItem="XIR-Nn-PKu" secondAttribute="trailing" id="uiC-xr-jZ6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XIR-Nn-PKu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="09L-hJ-OmD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XSF-d3-0LB"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="09L-hJ-OmD"/>
                     <connections>
                         <outlet property="addGea" destination="nYH-MQ-UmL" id="Wdf-eG-bnX"/>
                         <outlet property="segmentControl" destination="Bfd-mc-R1o" id="qwS-bl-3uW"/>
@@ -1224,7 +1229,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-Vl-eKt">
                                 <rect key="frame" x="72" y="535" width="231" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.63505387306213379" green="0.88327640295028687" blue="0.88050782680511475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.74117647058823533" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add "/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
