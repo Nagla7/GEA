@@ -557,8 +557,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-mc-R1o">
-                                <rect key="frame" x="0.0" y="86" width="375" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-mc-R1o">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
                                 <segments>
                                     <segment title="GEA Staff"/>
                                     <segment title="Customer"/>
@@ -573,6 +573,16 @@
                                 <rect key="frame" x="32" y="150" width="300" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.85815054180000006" green="0.3261989951" blue="0.2352232635" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OcC-dc-tnW">
+                                        <rect key="frame" x="0.0" y="28" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OcC-dc-tnW" id="usY-pG-SQZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="7WH-BG-0bp" id="fA7-dD-45k"/>
                                     <outlet property="delegate" destination="7WH-BG-0bp" id="56j-Nz-rFc"/>
@@ -582,6 +592,16 @@
                                 <rect key="frame" x="42" y="167" width="287" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="1" green="0.62404265020000005" blue="0.7477436838" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ypl-7V-dPI">
+                                        <rect key="frame" x="0.0" y="28" width="287" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ypl-7V-dPI" id="5Pd-72-98s">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="7WH-BG-0bp" id="oQa-Qf-c7u"/>
                                     <outlet property="delegate" destination="7WH-BG-0bp" id="PjX-Nd-wjR"/>
@@ -591,11 +611,29 @@
                                 <rect key="frame" x="36" y="166" width="293" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.1215686275" green="0.74117647060000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Lna-x4-F8w">
+                                        <rect key="frame" x="0.0" y="28" width="293" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lna-x4-F8w" id="lFs-3G-I94">
+                                            <rect key="frame" x="0.0" y="0.0" width="293" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="7WH-BG-0bp" id="VdT-6w-D0P"/>
                                     <outlet property="delegate" destination="7WH-BG-0bp" id="Aw4-Ng-aGh"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYH-MQ-UmL">
+                                <rect key="frame" x="16" y="578" width="49" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icons8-plus-filled-50"/>
+                                <connections>
+                                    <segue destination="2v1-sy-ojP" kind="push" id="gLl-Cy-fi5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -618,13 +656,10 @@
                         <viewLayoutGuide key="safeArea" id="XIR-Nn-PKu"/>
                     </view>
                     <navigationItem key="navigationItem" id="09L-hJ-OmD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XSF-d3-0LB">
-                            <connections>
-                                <segue destination="2v1-sy-ojP" kind="push" id="oGQ-Au-ejC"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XSF-d3-0LB"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addGea" destination="nYH-MQ-UmL" id="Wdf-eG-bnX"/>
                         <outlet property="segmentControl" destination="Bfd-mc-R1o" id="qwS-bl-3uW"/>
                         <outlet property="tableOne" destination="zLl-p3-NzA" id="0fs-n4-j3K"/>
                         <outlet property="tableThree" destination="x5c-NQ-rP7" id="PeE-ia-Rdz"/>
@@ -633,7 +668,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxi-jG-hqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1539.2" y="-843.32833583208401"/>
+            <point key="canvasLocation" x="-1540" y="-843.32833583208401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mwy-UH-GCD">
@@ -2065,6 +2100,7 @@
         <image name="icons8-email-100 (1)" width="100" height="100"/>
         <image name="icons8-identification-documents-120" width="120" height="120"/>
         <image name="icons8-key-2-100" width="100" height="100"/>
+        <image name="icons8-plus-filled-50" width="500" height="500"/>
         <image name="maps-and-flags" width="64" height="64"/>
         <image name="my profile" width="128" height="128"/>
         <image name="user" width="128" height="128"/>

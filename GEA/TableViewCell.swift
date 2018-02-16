@@ -14,18 +14,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var RegulationText: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        View.layer.masksToBounds = false
-        View.layer.shadowColor = UIColor.black.cgColor
-        View.layer.shadowOpacity = 0.5
-        View.layer.shadowOffset = CGSize(width: -1, height: 1)
-        View.layer.shadowRadius = 1
-        
-        View.layer.shadowPath = UIBezierPath(rect: View.bounds).cgPath
-        View.layer.shouldRasterize = true
-        View.layer.rasterizationScale = true ? UIScreen.main.scale : 1
-        
-        
+
         // Initialization code
     }
 

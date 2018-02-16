@@ -72,7 +72,6 @@ class RegulationController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            print(touches.first?.view != AddView,"@@@@@@@@@@@@@@@@")
             if touches.first?.view != AddView{
                 AddView.removeFromSuperview()}
         }

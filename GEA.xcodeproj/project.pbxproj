@@ -17,7 +17,6 @@
 		1D68DC2F2036551700865E85 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D68DC2D2036551700865E85 /* CustomCell.xib */; };
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
 		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
-		1DFAF374202BA629001763C4 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFAF373202BA629001763C4 /* Popup.swift */; };
 		2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */; };
 		29E36CAA2035811D008DD9FE /* VenuesTable1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */; };
 		29E36CAC20358E39008DD9FE /* GEASettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */; };
@@ -72,7 +71,6 @@
 		1D68DC2D2036551700865E85 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		1DF725442023EEE000900254 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassowrdController.swift; sourceTree = "<group>"; };
-		1DFAF373202BA629001763C4 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewCell.swift; sourceTree = "<group>"; };
 		29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesTable1ViewController.swift; sourceTree = "<group>"; };
 		29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEASettingViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				6139158320256B4500834A61 /* GoogleService-Info.plist */,
 				616DB9E9201F4D05000612D2 /* GEA.xcdatamodeld */,
 				1DF725442023EEE000900254 /* DesignableTextField.swift */,
-				1DFAF373202BA629001763C4 /* Popup.swift */,
 			);
 			path = GEA;
 			sourceTree = "<group>";
@@ -567,7 +564,6 @@
 				61EA480120334D0100AE3373 /* RegulationControllerTableViewCell.swift in Sources */,
 				0F4EE308202A5B8800EE2725 /* CustomView.swift in Sources */,
 				1D68DC2A2036202000865E85 /* ManageAccounts.swift in Sources */,
-				1DFAF374202BA629001763C4 /* Popup.swift in Sources */,
 				1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */,
 				0FB176E6202A878700931605 /* CustomButton.swift in Sources */,
 				E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */,
