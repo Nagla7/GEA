@@ -20,8 +20,8 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     ////////////////////////////////////////////
     var data = [
-        ["Soccer",       "Golf",      "Basketball",    "American Football",
-         "Baseball",     "Tennis"]
+        ["",       "",      "",    "",
+         "",     ""]
     ]
     
     var p: Int!
