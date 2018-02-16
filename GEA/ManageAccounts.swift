@@ -8,16 +8,40 @@
 
 import UIKit
 
-class ManageAccounts: UIViewController {
+class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSource {
+    
+    
 
     @IBOutlet weak var tableOne: UITableView!
     @IBOutlet weak var tableTwo: UITableView!
     @IBOutlet weak var tableThree: UITableView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    
+    
+    ////////////////////////////////////////////
+    var data = [
+        ["Soccer",       "Golf",      "Basketball",    "American Football",
+         "Baseball",     "Tennis"]
+    ]
+    
+    var p: Int!
+    ////////////////////////////////////////////
     override func viewDidLoad() {
         super.viewDidLoad()
-
+////////////
+        
+        let nib = UINib(nibName: "CustomCell",bundle:nil)
+        tableOne.register(nib, forCellReuseIdentifier: "CustomCell")
+        //tableOne.backgroundColor=UIColor.darkGray
+        p=0
         // Do any additional setup after loading the view.
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data[p].count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableOne.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,11 +52,13 @@ class ManageAccounts: UIViewController {
 
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
+            
         case 0:
             print("first")
             tableThree.isHidden=true
             tableOne.isHidden=false
             tableTwo.isHidden=true
+            //tableOne.reloadData()
             
             
             
