@@ -55,6 +55,15 @@ class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITa
         cell.Cost.text = venue?["Cost"] as? String
         return (cell)
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let SP = UIStoryboard(name: "Main" , bundle: nil)
+        let vInfo = SP.instantiateViewController(withIdentifier: "VenueInfoViewController") as! VenueInfoViewController
+        let venue : NSDictionary?
+        venue = venues[indexPath.row]
+        vInfo.Vname = venue?["VenueName"] as! String
+        vInfo.venue = venue
+        self.navigationController?.pushViewController(vInfo, animated: true)
+    }
     
 }
 
