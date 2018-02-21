@@ -28,7 +28,7 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
     var email_ = ""
     var phonenumber_ = ""
     var username_ = ""
-    var valids = Array(repeating: true, count: 9)
+    var valids = Array(repeating: true, count: 10)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +91,7 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
                     if let error = error {
                         print(error)
                     } else {
-                        self.databaseRef.child("Users").child(self.loggedInUser!.uid).child("email").setValue(self.email.text)
+                        self.databaseRef.child("Users").child(self.loggedInUser!.uid).child("email").setValue(self.email.text!.lowercased())
                     }
                 }
             }
@@ -101,7 +101,7 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
             }
             
             if !(self.username.text == self.username_){
-                self.databaseRef.child("Users").child(self.loggedInUser!.uid).child("username").setValue(self.username.text)
+                self.databaseRef.child("Users").child(self.loggedInUser!.uid).child("username").setValue(self.username.text!.lowercased())
             }
             
             if !(self.newpass.text == "" && self.newrepass.text == ""){
@@ -127,7 +127,7 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
         currentTextField?.resignFirstResponder()
         
         // change save button color if there was a change in valid text fieids
-        let textFieldsValid = valids[0] && valids[1] && valids[2] && valids[3] && valids[4] && valids[5] && valids[6] && valids[7] && valids[8]
+        let textFieldsValid = valids[0] && valids[1] && valids[2] && valids[3] && valids[4] && valids[5] && valids[6] && valids[7] && valids[8] && valids[9]
         let textFieldsChanged = ((self.fname.text != self.firstname_) || (self.lname.text != self.lastname_) || (self.email.text != self.email_) || (self.phone.text != self.phonenumber_) || (self.username.text != self.username_) || !(self.newpass.text == "" && self.newrepass.text == ""))
         
         currentTextField?.becomeFirstResponder()
@@ -235,6 +235,17 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
             } else {
                 valids[4] = true
             }
+            
+            //  check email uniqueness
+            databaseRef.child("Users").queryOrdered(byChild: "email").queryEqual(toValue: email.text!.lowercased()).observeSingleEvent(of: .value , with: { snapshot in
+                if snapshot.exists() {
+                    self.valids[9] = false
+                    self.erroneousTextField()
+                    self.popUpMessage(title: "Uh oh!", message: "\(self.email.text!.lowercased()) already exists. Try another email.")
+                } else {
+                    self.valids[9] = true
+                }
+            })
         }
         
         if (textField == phone)
