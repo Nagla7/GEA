@@ -1556,7 +1556,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L77-pP-5mY" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
-                                <rect key="frame" x="21" y="219" width="332" height="47"/>
+                                <rect key="frame" x="21" y="190" width="332" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -1603,7 +1603,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wAv-Bm-lph" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
-                                <rect key="frame" x="21" y="293" width="332" height="47"/>
+                                <rect key="frame" x="21" y="245" width="332" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -1650,7 +1650,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCE-BI-Zsj" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
-                                <rect key="frame" x="21" y="369" width="332" height="47"/>
+                                <rect key="frame" x="21" y="300" width="332" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -1697,7 +1697,54 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Sg-D9-Peb" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
-                                <rect key="frame" x="21" y="444" width="332" height="47"/>
+                                <rect key="frame" x="21" y="355" width="332" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.76470588240000004" green="0.098039215690000001" blue="0.57647058819999997" alpha="0.45360659250000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" red="0.84646267360000005" green="0.35694181940000003" blue="0.54488626799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderSize">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                        <color key="value" red="0.34554553030000001" green="0.61375790829999999" blue="0.75148445370000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveBorderColor">
+                                        <color key="value" red="0.76470588240000004" green="0.098039215690000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
+                                        <color key="value" red="0.84646267360000005" green="0.35694181940000003" blue="0.54488626799999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
+                                        <color key="value" red="0.34554553030000001" green="0.61375790829999999" blue="0.75148445370000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.34554553030000001" green="0.61375790829999999" blue="0.75148445370000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                        <real key="value" value="289"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="user (1)"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage2" value="icons8-key-2-100"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftPadding2">
+                                        <real key="value" value="310"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Re-enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HMT-ik-Vsf" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
+                                <rect key="frame" x="21" y="410" width="332" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -1744,7 +1791,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-Vl-eKt">
-                                <rect key="frame" x="21" y="533" width="332" height="35"/>
+                                <rect key="frame" x="21" y="495" width="332" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.74117647058823533" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1768,8 +1815,13 @@
                         <outlet property="Password" destination="1Sg-D9-Peb" id="wGt-nr-udu"/>
                         <outlet property="email" destination="wAv-Bm-lph" id="x8a-ZS-MUu"/>
                         <outlet property="fName" destination="mq2-Da-w4u" id="U66-Y2-4RU"/>
+                        <outlet property="fname" destination="mq2-Da-w4u" id="d6B-5R-exy"/>
                         <outlet property="lName" destination="L77-pP-5mY" id="JMP-0b-LWd"/>
+                        <outlet property="lname" destination="L77-pP-5mY" id="9jt-sw-4Ts"/>
+                        <outlet property="password" destination="1Sg-D9-Peb" id="C50-51-mJg"/>
+                        <outlet property="repassword" destination="HMT-ik-Vsf" id="JYV-Rx-gvh"/>
                         <outlet property="userName" destination="eCE-BI-Zsj" id="dvi-cu-Pxn"/>
+                        <outlet property="username" destination="eCE-BI-Zsj" id="eZg-Nf-iYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H63-Xd-Nc4" userLabel="First Responder" sceneMemberID="firstResponder"/>
