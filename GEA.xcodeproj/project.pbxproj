@@ -15,6 +15,8 @@
 		1D68DC2A2036202000865E85 /* ManageAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D68DC292036202000865E85 /* ManageAccounts.swift */; };
 		1D68DC2E2036551700865E85 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D68DC2C2036551700865E85 /* CustomCell.swift */; };
 		1D68DC2F2036551700865E85 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D68DC2D2036551700865E85 /* CustomCell.xib */; };
+		1DF14ED6203DEA0C009E8FD0 /* LisenceRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */; };
+		1DF14ED8203DEB58009E8FD0 /* CustomerComplaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF14ED7203DEB58009E8FD0 /* CustomerComplaints.swift */; };
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
 		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
 		2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */; };
@@ -72,6 +74,8 @@
 		1D68DC292036202000865E85 /* ManageAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccounts.swift; sourceTree = "<group>"; };
 		1D68DC2C2036551700865E85 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		1D68DC2D2036551700865E85 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisenceRequests.swift; sourceTree = "<group>"; };
+		1DF14ED7203DEB58009E8FD0 /* CustomerComplaints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerComplaints.swift; sourceTree = "<group>"; };
 		1DF725442023EEE000900254 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassowrdController.swift; sourceTree = "<group>"; };
 		2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				0F4EE307202A5B8800EE2725 /* CustomView.swift */,
 				87271F7C20270D4400D9F856 /* AddGEAViewController.swift */,
 				0F893F4420215CFF00B76FA9 /* LoginViewController.swift */,
+				1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */,
+				1DF14ED7203DEB58009E8FD0 /* CustomerComplaints.swift */,
 				616DB9EC201F4D05000612D2 /* Assets.xcassets */,
 				616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */,
 				616DB9F1201F4D05000612D2 /* Info.plist */,
@@ -569,6 +575,7 @@
 				1D68DC1320359CB500865E85 /* AddVenuesViewController.swift in Sources */,
 				61291390203207CC004AF11F /* TableViewCell.swift in Sources */,
 				29E36CAC20358E39008DD9FE /* GEASettingViewController.swift in Sources */,
+				1DF14ED8203DEB58009E8FD0 /* CustomerComplaints.swift in Sources */,
 				E3D0D83020284832006ED71C /* TextFieldEffects.swift in Sources */,
 				61EA480120334D0100AE3373 /* RegulationControllerTableViewCell.swift in Sources */,
 				0F4EE308202A5B8800EE2725 /* CustomView.swift in Sources */,
@@ -580,6 +587,7 @@
 				E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */,
 				87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */,
 				87318843203875A0002551F4 /* AdminAccountViewController.swift in Sources */,
+				1DF14ED6203DEA0C009E8FD0 /* LisenceRequests.swift in Sources */,
 				0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */,
 				616DB9EB201F4D05000612D2 /* GEA.xcdatamodeld in Sources */,
 				2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */,
