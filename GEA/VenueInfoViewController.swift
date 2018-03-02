@@ -11,11 +11,27 @@ import UIKit
 class VenueInfoViewController: UIViewController {
     var Vname = String()
     var venue : NSDictionary?
-
+    
+    @IBOutlet weak var costL: UILabel!
+    @IBOutlet weak var contactL: UILabel!
+    @IBOutlet weak var ownerL: UILabel!
+    @IBOutlet weak var capacityL: UILabel!
+    @IBOutlet weak var  WebsiteL: UILabel!
     @IBOutlet weak var vNameLable: UILabel!
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        vNameLable.text = Vname
+        vNameLable.text = Vname 
+        costL.text = venue!["Cost"] as! String
+        ownerL.text = venue!["OwnerInfo"] as! String
+        capacityL.text = venue!["Capacity"] as! String
+        WebsiteL.text = venue!["website"] as! String
+        contactL.text = venue!["ContactInfo"] as! String
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     

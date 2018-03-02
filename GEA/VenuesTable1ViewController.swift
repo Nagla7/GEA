@@ -52,7 +52,6 @@ class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITa
         let venue : NSDictionary?
         venue = venues[indexPath.row]
         cell.Vname.text = venue?["VenueName"] as? String
-        cell.Cost.text = venue?["Cost"] as? String
         return (cell)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
