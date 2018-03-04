@@ -39,6 +39,7 @@
 		75A70878F28412236098A55A /* Pods_GEA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EB447AA3D8A0AA8EA982E87 /* Pods_GEA.framework */; };
 		87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87271F7C20270D4400D9F856 /* AddGEAViewController.swift */; };
 		87318843203875A0002551F4 /* AdminAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87318842203875A0002551F4 /* AdminAccountViewController.swift */; };
+		8740A974204C33D300D90FD1 /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8740A973204C33D300D90FD1 /* FirstLoginViewController.swift */; };
 		8E8E870153799640748A2F8B /* Pods_GEAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */; };
 		AC34384126183F2CF96DDFC9 /* Pods_GEATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */; };
 		E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AA6FE20285189002D6F7D /* HoshiTextField.swift */; };
@@ -105,6 +106,7 @@
 		76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GEAUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87271F7C20270D4400D9F856 /* AddGEAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGEAViewController.swift; sourceTree = "<group>"; };
 		87318842203875A0002551F4 /* AdminAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAccountViewController.swift; sourceTree = "<group>"; };
+		8740A973204C33D300D90FD1 /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
 		A03264A9D82A9B033256B23C /* Pods-GEAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEAUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEAUITests/Pods-GEAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9CBA84A1F8C8297A1742E72 /* Pods-GEATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEATests/Pods-GEATests.release.xcconfig"; sourceTree = "<group>"; };
 		E33AA6FE20285189002D6F7D /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				E3D0D829202847F8006ED71C /* Text */,
 				616DB9E2201F4D05000612D2 /* AppDelegate.swift */,
 				616DB9E6201F4D05000612D2 /* Main.storyboard */,
+				8740A973204C33D300D90FD1 /* FirstLoginViewController.swift */,
 				87318842203875A0002551F4 /* AdminAccountViewController.swift */,
 				1D68DC1220359CB500865E85 /* AddVenuesViewController.swift */,
 				29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */,
@@ -581,6 +584,7 @@
 				87318843203875A0002551F4 /* AdminAccountViewController.swift in Sources */,
 				1DF14ED6203DEA0C009E8FD0 /* LisenceRequests.swift in Sources */,
 				0F893F482021685600B76FA9 /* LoginViewController.swift in Sources */,
+				8740A974204C33D300D90FD1 /* FirstLoginViewController.swift in Sources */,
 				616DB9EB201F4D05000612D2 /* GEA.xcdatamodeld in Sources */,
 				2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */,
 				616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */,

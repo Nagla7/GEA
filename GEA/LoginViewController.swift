@@ -64,20 +64,30 @@ class LoginViewController: UIViewController , UITextFieldDelegate {
                     //getting the email to login
                     var email = ""
                     var type = ""
+                    var firstlogin = ""
                     let data = snapshot.value as! [String: Any]
                     for (_,value) in data {
                         let user = value as? NSDictionary
                         email = user!["email"] as! String
                         type = user!["type"] as! String
+                        if (type == "gea"){
+                            firstlogin = user!["firstlogin"] as! String
+                        }
                     }
                     
                     // login with email and password from firebase
                     Auth.auth().signIn(withEmail: email, password: self.passwordTextField.text!) { (user, error) in
                         if error == nil {
                             
-                            //Go to the HomeViewController if the login is sucessful
-                            let vc = self.storyboard?.instantiateViewController(withIdentifier: type)
-                            self.present(vc!, animated: true, completion: nil)
+                            if (type == "gea" && firstlogin == "true"){
+                                self.ref.child("Users").child(user!.uid).child("firstlogin").setValue("false")
+                                let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstlogin")
+                                self.present(vc!, animated: true, completion: nil)
+                            } else {
+                                //Go to the HomeViewController if the login is sucessful
+                                let vc = self.storyboard?.instantiateViewController(withIdentifier: type)
+                                self.present(vc!, animated: true, completion: nil)
+                            }
                             
                         } else {
                             //Tells the user that there is an error and then gets firebase to tell them the error
