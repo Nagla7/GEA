@@ -26,13 +26,14 @@ class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITa
         ref=Database.database().reference()
         //read from database
         dbHandle = ref?.child("Venues").observe(.value, with: { (snapshot) in
-            let data=snapshot.value as! [String:Any]
+            if let data=snapshot.value as? [String:Any] {
             
             for(_,value) in data{
                 let venue = value as! NSDictionary
                 self.venues.append(venue)
             }
             self.VenuesTable.reloadData()
+            } else {print("No Venues")}
         })
         
     }
@@ -56,10 +57,9 @@ class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITa
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SP = UIStoryboard(name: "Main" , bundle: nil)
-        let vInfo = SP.instantiateViewController(withIdentifier: "VenueInfoViewController") as! VenueInfoViewController
+        let vInfo = SP.instantiateViewController(withIdentifier: "EditVenueViewController") as! EditVenueViewController
         let venue : NSDictionary?
         venue = venues[indexPath.row]
-        vInfo.Vname = venue?["VenueName"] as! String
         vInfo.venue = venue
         self.navigationController?.pushViewController(vInfo, animated: true)
     }

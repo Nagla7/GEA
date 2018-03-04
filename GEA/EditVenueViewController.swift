@@ -12,12 +12,12 @@ import Firebase
 class EditVenueViewController: UIViewController {
     
    
-    @IBOutlet weak var ownerInfo: HoshiTextField!
+    @IBOutlet weak var PhoneNum : HoshiTextField!
     @IBOutlet weak var Website: HoshiTextField!
     @IBOutlet weak var capacity: HoshiTextField!
     
     @IBOutlet weak var location: HoshiTextField!
-    @IBOutlet weak var contactInfo: HoshiTextField!
+    @IBOutlet weak var Email: HoshiTextField!
     @IBOutlet weak var VName: HoshiTextField!
     @IBOutlet weak var cost: HoshiTextField!
     var ref: DatabaseReference!
@@ -29,9 +29,9 @@ class EditVenueViewController: UIViewController {
         ref = Database.database().reference()
         VName.text = venue!["VenueName"] as! String
         cost.text = venue!["Cost"] as? String
-        ownerInfo.text = venue!["OwnerInfo"] as! String
+        PhoneNum.text = (venue!["phoneNum"] as! String)
         Website.text = venue!["website"] as! String
-        contactInfo.text = venue!["ContactInfo"] as! String
+        Email.text = venue!["Email"] as! String
         capacity.text = venue!["Capacity"] as! String
         location.text = venue!["Location"] as! String
         
@@ -50,17 +50,7 @@ class EditVenueViewController: UIViewController {
     
     @IBAction func EditVenueAction(_ sender: UIButton) {
 
-        let NewVenue = [
-            "VenueName": VName.text
-            , "Cost" : cost.text
-            ,"OwnerInfo": ownerInfo.text
-            , "website" : Website.text
-            ,"ContactInfo": contactInfo.text
-            ,"Capacity": capacity.text
-            ,"Location": location.text
-        ]
-        
-        ref.child("Venues")
+print("s____________")
         
         
     }

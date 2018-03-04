@@ -19,7 +19,6 @@
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
 		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
 		2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */; };
-		29755F1C2039659000BD6849 /* VenueInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29755F1B2039659000BD6849 /* VenueInfoViewController.swift */; };
 		29755F1E203965BC00BD6849 /* EditVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29755F1D203965BC00BD6849 /* EditVenueViewController.swift */; };
 		29E36CAA2035811D008DD9FE /* VenuesTable1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */; };
 		29E36CAC20358E39008DD9FE /* GEASettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */; };
@@ -77,7 +76,6 @@
 		1DF725442023EEE000900254 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassowrdController.swift; sourceTree = "<group>"; };
 		2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewCell.swift; sourceTree = "<group>"; };
-		29755F1B2039659000BD6849 /* VenueInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueInfoViewController.swift; sourceTree = "<group>"; };
 		29755F1D203965BC00BD6849 /* EditVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVenueViewController.swift; sourceTree = "<group>"; };
 		29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesTable1ViewController.swift; sourceTree = "<group>"; };
 		29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEASettingViewController.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */,
 				29E36CAD20358E52008DD9FE /* AdminSettingViewController.swift */,
 				29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */,
-				29755F1B2039659000BD6849 /* VenueInfoViewController.swift */,
 				29755F1D203965BC00BD6849 /* EditVenueViewController.swift */,
 				61EA47FE2033146200AE3373 /* RegulationController.swift */,
 				1D68DC292036202000865E85 /* ManageAccounts.swift */,
@@ -578,7 +575,6 @@
 				1D68DC2A2036202000865E85 /* ManageAccounts.swift in Sources */,
 				1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */,
 				29755F1E203965BC00BD6849 /* EditVenueViewController.swift in Sources */,
-				29755F1C2039659000BD6849 /* VenueInfoViewController.swift in Sources */,
 				0FB176E6202A878700931605 /* CustomButton.swift in Sources */,
 				E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */,
 				87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */,

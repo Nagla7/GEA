@@ -22,11 +22,12 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
     @IBOutlet weak var VenueName: HoshiTextField!
     @IBOutlet weak var Cost: HoshiTextField!
     @IBOutlet weak var capacity: HoshiTextField!
-    @IBOutlet weak var contactInfo: HoshiTextField!
+    @IBOutlet weak var PhoneNum: HoshiTextField!
+    @IBOutlet weak var Email: HoshiTextField!
     @IBOutlet weak var website: HoshiTextField!
-    @IBOutlet weak var ownerInfo: HoshiTextField!
+  
     @IBOutlet weak var location: HoshiTextField!
-    var randomID = Database.database().reference().childByAutoId()
+    var randomID : String = ""
     var venueImgurl : URL!
    // var imagePicker : UIImagePickerController!
     var ref : DatabaseReference!
@@ -35,12 +36,13 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
         VenueName.delegate = self
         Cost.delegate = self
         capacity.delegate = self
-        contactInfo.delegate = self
+        PhoneNum.delegate = self
         website.delegate = self
-        ownerInfo.delegate = self
+        Email.delegate = self
         location.delegate = self
         
         ref = Database.database().reference()
+        randomID = ref.childByAutoId().key
         // Do any additional setup after loading the view.
     }
     
@@ -57,7 +59,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
     @IBAction func addVenueAction(_ sender: Any) {
         
         var flag =  Bool()
-        flag = self.VenueName.text == "" || self.Cost.text! == "" || self.capacity.text! == "" || self.contactInfo.text! == "" || self.website.text! == "" || self.ownerInfo.text! == ""
+        flag = self.VenueName.text == "" || self.Cost.text! == "" || self.capacity.text! == "" || self.PhoneNum.text! == "" || self.website.text! == "" || self.Email.text! == ""
         
         if flag {
             print("************")
@@ -68,7 +70,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
             
         else {
            
-            ref.child("Venues").child(randomID.key).setValue(["VenueName": self.VenueName.text!, "VID": randomID.key , "Cost": self.Cost.text! , "Capacity": self.capacity.text! , "ContactInfo": self.contactInfo.text! , "website": self.website.text! , "OwnerInfo": self.ownerInfo.text! , "Location": self.location.text!])
+            ref.child("Venues").child(self.randomID).setValue(["VenueName": self.VenueName.text!, "VID": randomID , "Cost": self.Cost.text! , "Capacity": self.capacity.text! , "phoneNum": self.PhoneNum.text! , "website": self.website.text! , "Email": self.Email.text! , "Location": self.location.text!])
             
             
         }
@@ -81,7 +83,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
                 if(error == nil)
                 {
                     let downloadUrl = metadata!.downloadURL()
-                    self.databaseRef.child("Venues").child(self.randomID.key).setValue(["pic":String(describing:downloadUrl!)])
+                    self.databaseRef.child("Venues").child(self.randomID).child("pic").setValue(String(describing:downloadUrl!))
                     print(self.randomID,"************************?&&&&&&&&********kjjinhjki")
                     
                 }
@@ -107,7 +109,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
         
         if (textField == website)
         {
-            let name_reg = "[A-Z0-9a-z._%+-]+.[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let name_reg = "[A-Z0-9a-z._%+-]+.[A-Za-z0-9.-]+\\.[A-Za-z]{1,}"
             let name_test = NSPredicate(format: "SELF MATCHES %@", name_reg)
             if name_test.evaluate(with: website.text) == false
             {
@@ -116,8 +118,34 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
             }
-        }}
-        
+        }
+    
+    if (textField == Email)
+    {
+    let name_reg = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    let name_test = NSPredicate(format: "SELF MATCHES %@", name_reg)
+    if name_test.evaluate(with: Email.text) == false
+    {
+    let alert = UIAlertController(title: "Format Error", message: "Enter the E-mail in correct format. e.g. example@domain.com ", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    alert.addAction(ok)
+    self.present(alert, animated: true, completion: nil)
+    }
+    }
+    
+    if (textField == PhoneNum)
+    {
+    let name_reg = "[0-9]{10}"
+    let name_test = NSPredicate(format: "SELF MATCHES %@", name_reg)
+    if name_test.evaluate(with: PhoneNum.text) == false
+    {
+    let alert = UIAlertController(title: "Format Error", message: "Phone number has to be 10 digits long.", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    alert.addAction(ok)
+    self.present(alert, animated: true, completion: nil)
+    }
+    }
+    }
         
     
     //__________________Add picture acction_______________

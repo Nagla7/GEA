@@ -16,13 +16,24 @@ class CustomButton: UIButton {
             layer.cornerRadius = cornerRadius
         }
     }
+
+        @IBInspectable var borderWidth: CGFloat = 0 {
+            didSet {
+                layer.borderWidth = borderWidth
+            }
+        }
+        //Normal state bg and border
+   
+        
+
     
     func updateView(){
         
         button.layer.cornerRadius = frame.height/2
-        
-        
+      
+        button.layer.borderWidth = borderWidth
     }
+    
     /*
      // Only override draw() if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.
