@@ -18,6 +18,7 @@
 		1DF14ED6203DEA0C009E8FD0 /* LisenceRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */; };
 		1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF725442023EEE000900254 /* DesignableTextField.swift */; };
 		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
+		1DF9E548204C497300D2656E /* CustomerComplaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E547204C497300D2656E /* CustomerComplaints.swift */; };
 		2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */; };
 		29755F1E203965BC00BD6849 /* EditVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29755F1D203965BC00BD6849 /* EditVenueViewController.swift */; };
 		29E36CAA2035811D008DD9FE /* VenuesTable1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */; };
@@ -76,6 +77,7 @@
 		1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisenceRequests.swift; sourceTree = "<group>"; };
 		1DF725442023EEE000900254 /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassowrdController.swift; sourceTree = "<group>"; };
+		1DF9E547204C497300D2656E /* CustomerComplaints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerComplaints.swift; sourceTree = "<group>"; };
 		2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewCell.swift; sourceTree = "<group>"; };
 		29755F1D203965BC00BD6849 /* EditVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVenueViewController.swift; sourceTree = "<group>"; };
 		29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesTable1ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				87271F7C20270D4400D9F856 /* AddGEAViewController.swift */,
 				0F893F4420215CFF00B76FA9 /* LoginViewController.swift */,
 				1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */,
+				1DF9E547204C497300D2656E /* CustomerComplaints.swift */,
 				616DB9EC201F4D05000612D2 /* Assets.xcassets */,
 				616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */,
 				616DB9F1201F4D05000612D2 /* Info.plist */,
@@ -578,6 +581,7 @@
 				1D68DC2A2036202000865E85 /* ManageAccounts.swift in Sources */,
 				1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */,
 				29755F1E203965BC00BD6849 /* EditVenueViewController.swift in Sources */,
+				1DF9E548204C497300D2656E /* CustomerComplaints.swift in Sources */,
 				0FB176E6202A878700931605 /* CustomButton.swift in Sources */,
 				E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */,
 				87271F7D20270D4400D9F856 /* AddGEAViewController.swift in Sources */,
