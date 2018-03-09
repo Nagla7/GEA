@@ -75,6 +75,7 @@ class EditVenueViewController: UIViewController , UITextFieldDelegate {
 
         if let currentTextField = currentTextField {
             currentTextField.resignFirstResponder()
+            _ = navigationController?.popViewController(animated: true)
         }
         
         // check if all fields are valid

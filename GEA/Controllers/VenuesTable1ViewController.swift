@@ -30,8 +30,12 @@ class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITa
         model.Vdelegate=self
         model.getVenue()
         
-        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        model.Vdelegate=self
+        model.getVenue()
+        }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

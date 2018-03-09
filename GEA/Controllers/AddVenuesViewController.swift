@@ -55,6 +55,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     // _______ Databasse_______________
     @IBAction func addVenueAction(_ sender: Any) {
         
@@ -71,8 +72,6 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
         else {
            
             ref.child("Venues").child(self.randomID).setValue(["VenueName": self.VenueName.text!, "VID": randomID , "Cost": self.Cost.text! , "Capacity": self.capacity.text! , "phoneNum": self.PhoneNum.text! , "website": self.website.text! , "Email": self.Email.text! , "Location": self.location.text!])
-            
-            
         }
         
         if let imageData: Data = UIImagePNGRepresentation(self.vImg.image!)!
@@ -84,14 +83,12 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
                 {
                     let downloadUrl = metadata!.downloadURL()
                     self.databaseRef.child("Venues").child(self.randomID).child("pic").setValue(String(describing:downloadUrl!))
-                    print(self.randomID,"************************?&&&&&&&&********kjjinhjki")
+                    _ = self.navigationController?.popViewController(animated: true)
                     
                 }
                 else {print(error!.localizedDescription)}
             }
-        }
-    
-}
+        }}
     //___________Fields_______________
     func textFieldDidEndEditing(_ textField: UITextField) {
         if (textField == VenueName)
