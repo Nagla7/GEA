@@ -96,7 +96,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
     func textFieldDidEndEditing(_ textField: UITextField) {
         if (textField == VenueName)
         {
-            let name_reg = "[A-Za-z]{1,30}"
+            let name_reg = "[A-Za-z ]{1,50}"
             let name_test = NSPredicate(format: "SELF MATCHES %@", name_reg)
             if name_test.evaluate(with: VenueName.text) == false
             {
