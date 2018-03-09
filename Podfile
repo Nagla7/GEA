@@ -11,6 +11,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'Firebase/Storage'
+pod 'SDWebImage', '~> 4.0'
   target 'GEATests' do
     inherit! :search_paths
     # Pods for testing

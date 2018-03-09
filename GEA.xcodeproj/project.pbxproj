@@ -44,6 +44,7 @@
 		8E8E870153799640748A2F8B /* Pods_GEAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EA458ADC3D5A75C551DEBB /* Pods_GEAUITests.framework */; };
 		AC34384126183F2CF96DDFC9 /* Pods_GEATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C83A3B59E1F2991820F568 /* Pods_GEATests.framework */; };
 		E33AA6FF20285189002D6F7D /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33AA6FE20285189002D6F7D /* HoshiTextField.swift */; };
+		E33D7363204C710F00AB16FC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33D7362204C710F00AB16FC /* Model.swift */; };
 		E3D0D82F20284832006ED71C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D0D82C20284832006ED71C /* Info.plist */; };
 		E3D0D83020284832006ED71C /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D0D82D20284832006ED71C /* TextFieldEffects.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		A03264A9D82A9B033256B23C /* Pods-GEAUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEAUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEAUITests/Pods-GEAUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9CBA84A1F8C8297A1742E72 /* Pods-GEATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEATests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GEATests/Pods-GEATests.release.xcconfig"; sourceTree = "<group>"; };
 		E33AA6FE20285189002D6F7D /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		E33D7362204C710F00AB16FC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E3D0D82B20284832006ED71C /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		E3D0D82C20284832006ED71C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D0D82D20284832006ED71C /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
@@ -180,34 +182,14 @@
 		616DB9E1201F4D05000612D2 /* GEA */ = {
 			isa = PBXGroup;
 			children = (
-				E3D0D829202847F8006ED71C /* Text */,
+				E33D7361204C70E800AB16FC /* Model */,
+				E324D9FB204C6DCA00E5D0A7 /* Controllers */,
+				E324D9FA204C6DAA00E5D0A7 /* Views */,
 				616DB9E2201F4D05000612D2 /* AppDelegate.swift */,
-				616DB9E6201F4D05000612D2 /* Main.storyboard */,
-				8740A973204C33D300D90FD1 /* FirstLoginViewController.swift */,
-				87318842203875A0002551F4 /* AdminAccountViewController.swift */,
-				1D68DC1220359CB500865E85 /* AddVenuesViewController.swift */,
-				29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */,
-				29E36CAD20358E52008DD9FE /* AdminSettingViewController.swift */,
-				29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */,
-				29755F1D203965BC00BD6849 /* EditVenueViewController.swift */,
-				61EA47FE2033146200AE3373 /* RegulationController.swift */,
-				1D68DC292036202000865E85 /* ManageAccounts.swift */,
-				6129138F203207CC004AF11F /* TableViewCell.swift */,
-				61EA480020334D0100AE3373 /* RegulationControllerTableViewCell.swift */,
-				0FB176E5202A878700931605 /* CustomButton.swift */,
-				1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */,
-				2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */,
-				0F4EE307202A5B8800EE2725 /* CustomView.swift */,
-				87271F7C20270D4400D9F856 /* AddGEAViewController.swift */,
-				0F893F4420215CFF00B76FA9 /* LoginViewController.swift */,
-				1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */,
-				1DF9E547204C497300D2656E /* CustomerComplaints.swift */,
 				616DB9EC201F4D05000612D2 /* Assets.xcassets */,
-				616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */,
 				616DB9F1201F4D05000612D2 /* Info.plist */,
-				6139158320256B4500834A61 /* GoogleService-Info.plist */,
 				616DB9E9201F4D05000612D2 /* GEA.xcdatamodeld */,
-				1DF725442023EEE000900254 /* DesignableTextField.swift */,
+				6139158320256B4500834A61 /* GoogleService-Info.plist */,
 			);
 			path = GEA;
 			sourceTree = "<group>";
@@ -254,9 +236,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E324D9FA204C6DAA00E5D0A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				616DB9E6201F4D05000612D2 /* Main.storyboard */,
+				616DB9EE201F4D05000612D2 /* LaunchScreen.storyboard */,
+				0FB176E5202A878700931605 /* CustomButton.swift */,
+				0F4EE307202A5B8800EE2725 /* CustomView.swift */,
+				E3D0D829202847F8006ED71C /* Text */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E324D9FB204C6DCA00E5D0A7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8740A973204C33D300D90FD1 /* FirstLoginViewController.swift */,
+				87318842203875A0002551F4 /* AdminAccountViewController.swift */,
+				1D68DC1220359CB500865E85 /* AddVenuesViewController.swift */,
+				29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */,
+				29E36CAD20358E52008DD9FE /* AdminSettingViewController.swift */,
+				29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */,
+				29755F1D203965BC00BD6849 /* EditVenueViewController.swift */,
+				61EA47FE2033146200AE3373 /* RegulationController.swift */,
+				1D68DC292036202000865E85 /* ManageAccounts.swift */,
+				6129138F203207CC004AF11F /* TableViewCell.swift */,
+				61EA480020334D0100AE3373 /* RegulationControllerTableViewCell.swift */,
+				1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */,
+				2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */,
+				87271F7C20270D4400D9F856 /* AddGEAViewController.swift */,
+				0F893F4420215CFF00B76FA9 /* LoginViewController.swift */,
+				1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */,
+				1DF9E547204C497300D2656E /* CustomerComplaints.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E33D7361204C70E800AB16FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E33D7362204C710F00AB16FC /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E3D0D829202847F8006ED71C /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				1DF725442023EEE000900254 /* DesignableTextField.swift */,
 				1D68DC2B203654B100865E85 /* Cell */,
 				E33AA6FE20285189002D6F7D /* HoshiTextField.swift */,
 				E3D0D82C20284832006ED71C /* Info.plist */,
@@ -482,6 +509,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GEA/Pods-GEA-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -489,6 +517,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -593,6 +622,7 @@
 				2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */,
 				616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */,
 				1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */,
+				E33D7363204C710F00AB16FC /* Model.swift in Sources */,
 				1D68DC2E2036551700865E85 /* CustomCell.swift in Sources */,
 				29E36CAE20358E52008DD9FE /* AdminSettingViewController.swift in Sources */,
 			);
