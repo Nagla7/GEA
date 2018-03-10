@@ -71,6 +71,13 @@ class EditVenueViewController: UIViewController , UITextFieldDelegate {
         location.text = location_
     }
     
+    
+    @IBAction func DeleteVenueAction(_ sender: Any) {
+        self.ref.child("Venues").child(VID).removeValue()
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+
     @IBAction func EditVenueAction(_ sender: UIButton) {
 
         if let currentTextField = currentTextField {

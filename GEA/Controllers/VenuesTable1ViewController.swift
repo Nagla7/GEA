@@ -31,6 +31,7 @@ class VenuesTable1ViewController: UIViewController , UITableViewDataSource, UITa
         model.getVenue()
         
     }
+   
     
     override func viewDidAppear(_ animated: Bool) {
         model.Vdelegate=self

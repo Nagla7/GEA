@@ -53,6 +53,14 @@ class Model{
                 
                 for(_,value) in data{
                     let venue = value as! NSDictionary
+                    var i = -1
+                    for v in venues {
+                        i = i+1
+                        if venue["VID"] as! String == v["VID"] as! String{
+                            print("----------ignore--------------")
+                            venues.remove(at: i)
+                        }
+                    }
                     venues.append(venue)
                 }
                 self.Vdelegate?.receiveVenues(data:venues)
