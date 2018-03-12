@@ -29,7 +29,7 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
         super.viewDidLoad()
        
         //sections objects array
-        objectsArray = [Objects(sectionName: "To Be Accepted", sectionObjects: [" "," "])]
+        objectsArray = [Objects(sectionName: "", sectionObjects: [" "," "])]
         
         //table delegate
         requestsTable.delegate = self

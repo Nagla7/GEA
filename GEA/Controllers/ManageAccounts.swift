@@ -37,7 +37,9 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     
     
-
+    
+   
+    
     @IBOutlet weak var addGea: UIButton!
     @IBOutlet weak var tableOne: UITableView! // gea
     @IBOutlet weak var tableTwo: UITableView! // customer

@@ -224,9 +224,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="0jd-xy-Cya" kind="popoverPresentation" popoverAnchorView="saA-PW-aTs" id="KNL-9m-2ml">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="0jd-xy-Cya" kind="push" id="z3m-Zp-3us"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ki-Dm-AIs">
@@ -685,6 +683,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kak-Xg-jzM"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3mn-gK-X7X"/>
                     <connections>
                         <outlet property="email" destination="gne-8n-anW" id="KWt-5b-zhb"/>
                         <outlet property="fname" destination="WaU-R7-H6S" id="ob7-hW-IWQ"/>
@@ -842,6 +841,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aar-Iw-id1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YTj-p8-3cj"/>
                     <connections>
                         <outlet property="password" destination="FfU-v4-Jdx" id="wwp-DW-kzI"/>
                         <outlet property="repassword" destination="p8I-QM-lx6" id="3Vi-5R-9Ri"/>
@@ -1082,7 +1082,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icons8-plus-filled-50"/>
                                 <connections>
-                                    <segue destination="2v1-sy-ojP" kind="push" id="gLl-Cy-fi5"/>
+                                    <segue destination="2v1-sy-ojP" kind="push" id="tOy-zu-JTA"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-mc-R1o">
@@ -1114,7 +1114,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="09L-hJ-OmD"/>
                     <connections>
-                        <outlet property="addGea" destination="nYH-MQ-UmL" id="Wdf-eG-bnX"/>
+                        <outlet property="addGea" destination="nYH-MQ-UmL" id="rgU-bJ-AGB"/>
                         <outlet property="segmentControl" destination="Bfd-mc-R1o" id="qwS-bl-3uW"/>
                         <outlet property="tableOne" destination="zLl-p3-NzA" id="0fs-n4-j3K"/>
                         <outlet property="tableThree" destination="x5c-NQ-rP7" id="PeE-ia-Rdz"/>
@@ -1286,9 +1286,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                                         <state key="normal" title="Button" image="my profile"/>
                                         <connections>
-                                            <segue destination="V7i-2V-EOw" kind="popoverPresentation" popoverAnchorView="7XX-wU-8SR" id="mRr-sb-rFv">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <segue destination="V7i-2V-EOw" kind="push" id="9UT-Xl-VK7"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2691,6 +2689,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="VZ7-sO-i0j" kind="push" id="VdY-TQ-EPA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="________________________________________________________________________________________________________________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQq-ld-Ki9">
                                 <rect key="frame" x="-2" y="158" width="377" height="21"/>
@@ -3129,4 +3130,7 @@
         <image name="user (1)" width="512" height="512"/>
         <image name="warning-1" width="64" height="64"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9UT-Xl-VK7"/>
+    </inferredMetricsTieBreakers>
 </document>
