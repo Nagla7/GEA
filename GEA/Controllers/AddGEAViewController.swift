@@ -74,7 +74,8 @@ class AddGEAViewController: UIViewController , UITextFieldDelegate {
         if(textFieldsValid){
                 Auth.auth().createUser(withEmail: self.email.text!, password: self.password.text!) { (user, error) in
                     if error == nil {
-                        self.ref.child("Users").child(user!.uid).setValue(["firstname":self.fname.text!,"lastname":self.lname.text!,"email": self.email.text!.lowercased(),"username": self.username.text!.lowercased(),"UID": user!.uid, "firstlogin":"true"])
+                        self.ref.child("Users").child(user!.uid).setValue(["firstname":self.fname.text!,"lastname":self.lname.text!,"email": self.email.text!.lowercased(),"username": self.username.text!.lowercased(),"UID": user!.uid, "firstlogin":"true","type":"gea"])
+                        
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "admin")
                         self.present(vc!, animated: true, completion: nil)
                     } else {
