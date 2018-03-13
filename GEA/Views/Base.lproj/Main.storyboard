@@ -355,9 +355,6 @@
                                                 <real key="value" value="120"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textFieldDidChange:" destination="0jd-xy-Cya" eventType="editingChanged" id="yvP-b6-FBT"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Xk-jU-UtM" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
                                         <rect key="frame" x="191" y="78" width="141" height="47"/>
@@ -405,9 +402,6 @@
                                                 <real key="value" value="120"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textFieldDidChange:" destination="0jd-xy-Cya" eventType="editingChanged" id="Kud-D6-I5o"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stN-CQ-Bvf" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
                                         <rect key="frame" x="27" y="243" width="308" height="47"/>
@@ -455,9 +449,6 @@
                                                 <real key="value" value="289"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textFieldDidChange:" destination="0jd-xy-Cya" eventType="editingChanged" id="cnI-ze-zxF"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6XQ-1K-3br" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
                                         <rect key="frame" x="27" y="188" width="308" height="47"/>
@@ -505,9 +496,6 @@
                                                 <real key="value" value="289"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textFieldDidChange:" destination="0jd-xy-Cya" eventType="editingChanged" id="k1k-ec-fY2"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gne-8n-anW" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
                                         <rect key="frame" x="27" y="133" width="308" height="47"/>
@@ -555,9 +543,6 @@
                                                 <real key="value" value="289"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textFieldDidChange:" destination="0jd-xy-Cya" eventType="editingChanged" id="OOf-Ur-8SM"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F8R-xZ-yHo" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
                                         <rect key="frame" x="27" y="298" width="309" height="47"/>
@@ -605,9 +590,6 @@
                                                 <real key="value" value="289"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textFieldDidChange:" destination="0jd-xy-Cya" eventType="editingChanged" id="XMn-lK-qrQ"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hmu-tt-8L6" customClass="HoshiTextField" customModule="GEA" customModuleProvider="target">
                                         <rect key="frame" x="27" y="353" width="309" height="47"/>
@@ -655,14 +637,11 @@
                                                 <real key="value" value="289"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="textFieldDidChange:" destination="0jd-xy-Cya" eventType="editingChanged" id="lru-rC-m7d"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGH-y7-mw8">
                                         <rect key="frame" x="27" y="429" width="309" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="0.2499197346" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.062418304379999998" green="0.64072883130000002" blue="0.62210971120000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Save"/>
@@ -808,8 +787,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password for security issues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQQ-sN-H2L">
-                                <rect key="frame" x="77" y="133" width="217" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="password for security reasons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQQ-sN-H2L">
+                                <rect key="frame" x="77" y="133" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -833,7 +812,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginAction:" destination="ZpJ-g5-FBj" eventType="touchUpInside" id="Pcb-eR-nyD"/>
                                     <action selector="resetPasswordAction:" destination="VZ7-sO-i0j" eventType="touchUpInside" id="iZr-Lc-lpX"/>
                                 </connections>
                             </button>
@@ -3149,6 +3127,6 @@
         <image name="warning-1" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NUN-eB-LeS"/>
+        <segue reference="VdY-TQ-EPA"/>
     </inferredMetricsTieBreakers>
 </document>

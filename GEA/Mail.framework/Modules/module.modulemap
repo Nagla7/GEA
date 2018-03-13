@@ -1,0 +1,6 @@
+framework module Mail {
+  umbrella header "Mail.h"
+
+  export *
+  module * { export * }
+}

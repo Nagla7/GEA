@@ -63,7 +63,7 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
             self.phone.text = self.phonenumber_
             self.username.text = self.username_
             
-            self.saveButton.isEnabled = false
+            //self.saveButton.isEnabled = false
         })
     }
     
@@ -115,12 +115,14 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
                     }
                 }
             }
+            _ = self.navigationController?.popViewController(animated: true)
+            //self.dismiss(animated: true, completion: nil)
             
         } else {
             popUpMessage(title: "Can't Save Changes!", message: "Make sure all fields are in correct format and not empty.")
         }
     }
-    
+    /*
     // ================== SAVE BUTTON COLOR ======================
     @IBAction func textFieldDidChange(_ sender: Any) {
         print("textField: \(String(describing: currentTextField?.text))")
@@ -139,7 +141,7 @@ class AdminAccountViewController: UIViewController , UITextFieldDelegate {
             saveButton.backgroundColor = UIColor(red:0.77, green:0.91, blue:0.91, alpha:1.0)
             saveButton.isEnabled = false
         }
-    }
+    }*/
     
     // ================== TEXT FIELD COLOR ======================
     func erroneousTextField(){

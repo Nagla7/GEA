@@ -11,34 +11,9 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSource,AccountsDelegate {
-    func receivedNotApproveSP(data: [NSDictionary], keys: [String]) {
-        
-    }
-    
-    func receivedApproveSP(data: [NSDictionary], keys: [String]) {
-        
-    }
-    
-   
-  
-    
-    func receivedGea(data: [NSDictionary],keys:[String]) {
-        self.Gea=data
-        self.keys1=keys
-        self.tableOne.reloadData()
-    }
-    
-    func recieveCustomer(data: [NSDictionary], keys: [String]) {
-        self.keys2=keys
-        self.Customers=data
-        self.tableTwo.reloadData()
-    }
+class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     
-    
-    
-   
     
     @IBOutlet weak var addGea: UIButton!
     @IBOutlet weak var tableOne: UITableView! // gea
@@ -66,9 +41,10 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var companyname = ""
     var commercialrecordnumber = ""
     var password = ""
-    var model=Model()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //============The configurations of the tables===========
         
         tableOne.delegate = self
@@ -79,9 +55,6 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         tableThree.dataSource = self
         tableThree.isHidden=true
         tableTwo.isHidden=true
-        tableOne.tableFooterView=UIView(frame: .zero)
-        tableTwo.tableFooterView=UIView(frame: .zero)
-        tableThree.tableFooterView=UIView(frame: .zero)
         //tableOne.backgroundColor=UIColor.darkGray
         let nib = UINib(nibName: "CustomCell",bundle:nil)
         tableOne.register(nib, forCellReuseIdentifier: "CustomCell")
@@ -90,14 +63,35 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         
         //============Fetching data===========
-        model.accountDelegate=self
         // 1- GEA
-        model.getGEA()
+        var type = ""
+        ref=Database.database().reference()
+        dbHandle = ref?.child("Users").observe(.value, with: { (snapshot) in
+            if let deta=snapshot.value as? [String:Any]{
+                for (key,value) in deta{
+                    let gea=value as! NSDictionary
+                    type = gea["type"] as! String
+                    if (type == "gea"){
+                        self.Gea.append(gea)
+                        self.keys1.append(key)
+                    }}
+                self.tableOne.reloadData()
+            } else {print("There are no GEA staff!")}
+        })
+        
         // 2- Customers
-        model.getCustomer()
+        dbHandle = ref?.child("Customers").observe(.value, with: { (snapshot) in
+            if let deta=snapshot.value as? [String:Any]{
+                for (key,value) in deta{
+                    let customer=value as! NSDictionary
+                    self.Customers.append(customer)
+                    self.keys2.append(key)
+                }
+                self.tableTwo.reloadData()
+            } else {print("There are no customers!")}
+        })
         
         // 3- Service not approved
-          ref=Database.database().reference()
         dbHandle = ref?.child("ApprovalRequests").observe(.value, with: { (snapshot) in
             if let deta=snapshot.value as? [String:Any]{
                 var notApprovedService = [NSDictionary?]()
@@ -106,7 +100,6 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
                     self.notApprovedService.append(service)
                     self.keys3.append(key)
                 }
-                print(notApprovedService,"^^^^^^^^^^&^&^&")
                 self.Service  = [self.notApprovedService,self.ApprovedService]
                 self.tableThree.reloadData()
             } else {print("There are no requests!")}
@@ -175,7 +168,7 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
             
@@ -206,7 +199,7 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
             break
         }
     }
-
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title:"Delete", handler:{ action , indexPath in
             //============Delete GEA===========
@@ -300,5 +293,5 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
-
+    
 }

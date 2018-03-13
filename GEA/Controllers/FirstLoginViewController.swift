@@ -38,7 +38,6 @@ class FirstLoginViewController: UIViewController {
                         print(error)
                     } else {
                         print("Password Updated")
-                        self.popUpMessage(title: "Success", message: "Password Updated Successfully")
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "gea")
                         self.present(vc!, animated: true, completion: nil)
                     }
