@@ -62,6 +62,8 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
         var flag =  Bool()
         flag = self.VenueName.text == "" || self.Cost.text! == "" || self.capacity.text! == "" || self.PhoneNum.text! == "" || self.website.text! == "" || self.Email.text! == ""
         
+
+        
         if flag {
             print("************")
             let alertController = UIAlertController(title: "Error", message: "All fields are required. Please enter all the informations.", preferredStyle: .alert)
@@ -72,8 +74,8 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
         else {
            
             ref.child("Venues").child(self.randomID).setValue(["VenueName": self.VenueName.text!, "VID": randomID , "Cost": self.Cost.text! , "Capacity": self.capacity.text! , "phoneNum": self.PhoneNum.text! , "website": self.website.text! , "Email": self.Email.text! , "Location": self.location.text!])
-        }
         
+   
         if let imageData: Data = UIImagePNGRepresentation(self.vImg.image!)!
         {
             let VPicStorageRef = self.storageRef.child("Venue/\(self.VenueName.text)/Pic")
@@ -88,7 +90,9 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
                 }
                 else {print(error!.localizedDescription)}
             }
-        }}
+        }
+        }
+    }
     //___________Fields_______________
     func textFieldDidEndEditing(_ textField: UITextField) {
         if (textField == VenueName)
@@ -104,18 +108,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
             }
         }
         
-        if (textField == website)
-        {
-            let name_reg = "[A-Z0-9a-z._%+-]+.[A-Za-z0-9.-]+\\.[A-Za-z]{1,}"
-            let name_test = NSPredicate(format: "SELF MATCHES %@", name_reg)
-            if name_test.evaluate(with: website.text) == false
-            {
-                let alert = UIAlertController(title: "Format Error", message: "Enter the website in correct format. e.g. example.domain.com ", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                alert.addAction(ok)
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
+       
     
     if (textField == Email)
     {

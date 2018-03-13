@@ -42,6 +42,16 @@ var  shadowView = UIView()
     }
     
     @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = cornerRadius
+        }
+    }
+   
+    @IBInspectable
     var shadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {

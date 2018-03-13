@@ -32,6 +32,7 @@ class CustomButton: UIButton {
         button.layer.cornerRadius = frame.height/2
       
         button.layer.borderWidth = borderWidth
+        
     }
     
     /*

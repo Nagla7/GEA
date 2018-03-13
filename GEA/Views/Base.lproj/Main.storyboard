@@ -212,7 +212,7 @@
                                 <rect key="frame" x="-3" y="171" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Reset Password">
+                                <state key="normal" title="Edit account">
                                     <color key="titleColor" red="0.12156862745098039" green="0.74117647058823533" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1735,34 +1735,54 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Jn-vR-HwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="doh-5F-Ku2">
-                    <rect key="frame" x="0.0" y="0.0" width="312" height="416"/>
+                <view contentMode="scaleToFill" id="doh-5F-Ku2" customClass="CustomView" customModule="GEA" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-8f-FRS">
-                            <rect key="frame" x="63" y="329" width="187" height="48"/>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kan-5i-2pS">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.35029894113540649" green="0.729259192943573" blue="0.73333603143692017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="Publish"/>
-                            <connections>
-                                <action selector="Publish:" destination="6pA-ct-8Mn" eventType="touchUpInside" id="aHU-e3-pRI"/>
-                            </connections>
-                        </button>
-                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="write down new regulations and guidelines here...." clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1E-Ru-oHV">
-                            <rect key="frame" x="16" y="71" width="280" height="237"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="Xhp-19-yOY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Write  new regulations here" placeholder="Write  new regulations here" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1E-Ru-oHV">
+                                        <rect key="frame" x="24" y="141" width="316" height="334"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-8f-FRS">
+                                        <rect key="frame" x="277" y="413" width="63" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="icons8-sent-100"/>
+                                        <connections>
+                                            <action selector="Publish:" destination="6pA-ct-8Mn" eventType="touchUpInside" id="aHU-e3-pRI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <blurEffect style="light"/>
+                        </visualEffectView>
                     </subviews>
-                    <color key="backgroundColor" red="0.65624080697255005" green="0.80526253172588835" blue="0.79394222739883424" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <viewLayoutGuide key="safeArea" id="RCj-zg-Br8"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" red="1" green="0.5034433988" blue="0.27220452049999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-370.39999999999998" y="3267.6161919040483"/>
+            <point key="canvasLocation" x="-370" y="4001"/>
         </scene>
         <!--Add Gea-->
         <scene sceneID="mHT-Wp-4xl">
@@ -2605,10 +2625,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="urz-7t-iyZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cinema" translatesAutoresizingMaskIntoConstraints="NO" id="urz-7t-iyZ">
                                 <rect key="frame" x="113" y="64" width="149" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75117725133895874" green="0.43471705913543701" blue="0.63923180103302002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPC-Y9-jBP">
                                 <rect key="frame" x="234" y="149" width="28" height="26"/>
@@ -3111,6 +3130,7 @@
     <resources>
         <image name="Image-2" width="256" height="256"/>
         <image name="Untitled-2" width="344" height="156"/>
+        <image name="cinema" width="128" height="94"/>
         <image name="cinema (1)" width="64" height="46"/>
         <image name="contract (2)" width="64" height="64"/>
         <image name="entertainmentalogoback-no-shadow-new" width="2600" height="1800"/>
@@ -3121,6 +3141,7 @@
         <image name="icons8-phone-100" width="16" height="16"/>
         <image name="icons8-phone-50" width="50" height="50"/>
         <image name="icons8-plus-filled-50" width="500" height="500"/>
+        <image name="icons8-sent-100" width="100" height="100"/>
         <image name="maps-and-flags" width="64" height="64"/>
         <image name="settings" width="64" height="64"/>
         <image name="user" width="128" height="128"/>
@@ -3128,6 +3149,6 @@
         <image name="warning-1" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9UT-Xl-VK7"/>
+        <segue reference="NUN-eB-LeS"/>
     </inferredMetricsTieBreakers>
 </document>

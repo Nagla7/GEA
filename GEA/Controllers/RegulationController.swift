@@ -31,6 +31,7 @@ class RegulationController: UIViewController, UITableViewDelegate, UITableViewDa
             //Blure.isHidden = true
             tableView.delegate=self
             tableView.dataSource=self
+             
             AddView.layer.shadowColor = UIColor.black.cgColor
             AddView.layer.shadowOpacity = 0.5
             AddView.layer.shadowOffset = CGSize(width: -2, height: 2)
