@@ -117,6 +117,7 @@
 		E3D0D82B20284832006ED71C /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
 		E3D0D82C20284832006ED71C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D0D82D20284832006ED71C /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
+		E3D9D034205E5D300007A9B8 /* GEA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GEA.entitlements; sourceTree = "<group>"; };
 		F20FFC1AA9EE29CD8A58D3E9 /* Pods-GEA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GEA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GEA/Pods-GEA.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +183,7 @@
 		616DB9E1201F4D05000612D2 /* GEA */ = {
 			isa = PBXGroup;
 			children = (
+				E3D9D034205E5D300007A9B8 /* GEA.entitlements */,
 				E33D7361204C70E800AB16FC /* Model */,
 				E324D9FB204C6DCA00E5D0A7 /* Controllers */,
 				E324D9FA204C6DAA00E5D0A7 /* Views */,
@@ -371,6 +373,11 @@
 					616DB9DE201F4D05000612D2 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					616DB9F5201F4D05000612D2 = {
 						CreatedOnToolsVersion = 9.2;
@@ -792,11 +799,12 @@
 			baseConfigurationReference = F20FFC1AA9EE29CD8A58D3E9 /* Pods-GEA.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GEA/GEA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HPCAWM8R7;
+				DEVELOPMENT_TEAM = 8845V2P47V;
 				INFOPLIST_FILE = GEA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GP.GEA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GP.GEA1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -808,11 +816,12 @@
 			baseConfigurationReference = 4754AF1146F8231A8A99D636 /* Pods-GEA.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GEA/GEA.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4HPCAWM8R7;
+				DEVELOPMENT_TEAM = 8845V2P47V;
 				INFOPLIST_FILE = GEA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.GP.GEA;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GP.GEA1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
