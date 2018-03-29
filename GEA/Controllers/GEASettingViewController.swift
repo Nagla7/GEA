@@ -37,6 +37,12 @@ class GEASettingViewController: UIViewController {
         }
     }
     
+    @IBAction func GoToResetPassword(_ sender: UIButton) {
+        let SP = UIStoryboard(name: "Main" , bundle: nil)
+        let FL = SP.instantiateViewController(withIdentifier: "firstlogin" ) as! FirstLoginViewController
+        FL.flag = true
+         self.navigationController?.pushViewController(FL, animated: true)
+    }
     /*
     // MARK: - Navigation
 

@@ -821,8 +821,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="YTj-p8-3cj"/>
                     <connections>
+                        <outlet property="L1" destination="YTk-wT-PXj" id="5P8-nX-AwT"/>
+                        <outlet property="L2" destination="iQQ-sN-H2L" id="UX5-Cy-vDg"/>
                         <outlet property="password" destination="FfU-v4-Jdx" id="wwp-DW-kzI"/>
                         <outlet property="repassword" destination="p8I-QM-lx6" id="3Vi-5R-9Ri"/>
+                        <outlet property="skipBtn" destination="9xi-9X-UXn" id="8gK-Y4-HXi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSa-8P-Phc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2684,7 +2687,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="VZ7-sO-i0j" kind="push" id="VdY-TQ-EPA"/>
+                                    <action selector="GoToResetPassword:" destination="V7i-2V-EOw" eventType="touchUpInside" id="fab-5H-Zhl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="________________________________________________________________________________________________________________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQq-ld-Ki9">
@@ -3126,7 +3129,4 @@
         <image name="user (1)" width="512" height="512"/>
         <image name="warning-1" width="64" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="VdY-TQ-EPA"/>
-    </inferredMetricsTieBreakers>
 </document>

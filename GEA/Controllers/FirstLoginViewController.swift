@@ -13,16 +13,26 @@ import FirebaseDatabase
 
 class FirstLoginViewController: UIViewController {
 
+    @IBOutlet weak var L2: UILabel!
+    @IBOutlet weak var L1: UILabel!
     @IBOutlet weak var password: HoshiTextField!
     @IBOutlet weak var repassword: HoshiTextField!
     var ref : DatabaseReference! = nil
     var email = ""
     var currentTextField : UITextField?
     var valids = Array(repeating: true, count: 3)
+    var flag = Bool()
     
+    @IBOutlet weak var skipBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        if (flag){
+           skipBtn.isHidden = true
+            L1.isHidden = true
+            L2.isHidden = true
+           
+        }
     }
 
     @IBAction func resetPasswordAction(_ sender: Any) {
