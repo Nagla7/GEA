@@ -2653,6 +2653,44 @@
             </objects>
             <point key="canvasLocation" x="264.80000000000001" y="14.842578710644679"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="DzD-tG-eLD">
+            <objects>
+                <viewController id="KbE-h0-2VW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hai-DW-RfD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="entertainmentalogoback-no-shadow-new" translatesAutoresizingMaskIntoConstraints="NO" id="ozB-Gq-bu6">
+                                <rect key="frame" x="16" y="64" width="343" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCt-62-wB8">
+                                <rect key="frame" x="30" y="211" width="292" height="196"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="adU-bJ-dc2">
+                                <rect key="frame" x="10" y="262" width="354" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Entertainment in a Click provides event licensing services, guidelines and regulations publishing services, and customer complaints handling services for the General Entertainments Authority staff.</string>
+                                <color key="textColor" red="0.38909162417393645" green="0.69596869183047894" blue="0.70925300345202991" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wMQ-ym-18V"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zsq-P5-lud"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iN8-os-Afd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3098.4000000000001" y="3241.5292353823093"/>
+        </scene>
         <!--Setting View Controller-->
         <scene sceneID="Nzl-lt-fS7">
             <objects>
@@ -2718,6 +2756,9 @@
                                 <state key="normal" title="About">
                                     <color key="titleColor" red="0.1215686275" green="0.74117647060000003" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="KbE-h0-2VW" kind="push" id="ryW-ZI-y3I"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="________________________________________________________________________________________________________________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQz-ZB-0Io">
                                 <rect key="frame" x="0.0" y="216" width="377" height="21"/>
