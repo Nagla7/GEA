@@ -28,7 +28,7 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var ApprovedService = [NSDictionary?]()
     var Service = [[NSDictionary?](),[NSDictionary?]()]
     var SegmentedControlindex = 0
-    let sections=["To be approved","Service Providers Accounts"] // cahnge it please ما لقيت اسم صح
+    let sections=["To be approved","Service Providers Accounts"] 
     var keys1 = [String](); //gea keys
     var keys2 = [String](); //customer keys
     var keys3 = [String](); //disapproved service keys
