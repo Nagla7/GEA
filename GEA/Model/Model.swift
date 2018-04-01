@@ -14,6 +14,11 @@ protocol RegulationDelegate:class{
 protocol VenuesDelegate:class {
     func receiveVenues(data:[NSDictionary])
 }
+
+protocol ReportsDelegate:class {
+    func receiveReports(data:[NSDictionary])
+}
+
 protocol AccountsDelegate:class {
     func recieveCustomer(data:[NSDictionary],keys:[String])
     func receivedGea(data:[NSDictionary],keys:[String])
@@ -26,6 +31,7 @@ class Model{
      var delegate: RegulationDelegate?
     var Vdelegate:VenuesDelegate?
     var accountDelegate:AccountsDelegate?
+    var Rdelegate : ReportsDelegate?
     /////////////conection for regulation//////////
     func getRegulation(){
         ref=Database.database().reference()
@@ -43,6 +49,25 @@ class Model{
             }
             
         })
+    }
+    
+    func getReports(){
+         ref=Database.database().reference()
+        var Reports=[NSDictionary]()
+        dbHandle = ref?.child("ReportedReviews").observe(.value, with: { (snapshot) in
+            if let deta=snapshot.value as? [String:Any]{
+                print(deta)
+                for (_,value) in deta{
+                    let Report=value as! NSDictionary
+                    Reports.append(Report)
+                }
+                self.Rdelegate?.receiveReports(data:Reports)}
+            else{
+                self.Rdelegate?.receiveReports(data:[NSDictionary]())
+            }
+        
+        })
+        
     }
     ///////////Connection for venues////////////////
     func getVenue(){

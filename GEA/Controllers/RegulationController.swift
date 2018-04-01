@@ -19,23 +19,31 @@ class RegulationController: UIViewController, UITableViewDelegate, UITableViewDa
     //    @IBOutlet weak var Blure: UIVisualEffectView!
     @IBOutlet weak var noRegulation: UILabel!
     @IBOutlet weak var tableView: UITableView!
-        @IBOutlet weak var Text: UITextField!
+        @IBOutlet weak var Text: UITextView!
         @IBOutlet var AddView: UIView!
         var ref : DatabaseReference!
         var dbHandle:DatabaseHandle?
         var Regulations = [NSDictionary]()
         var model=Model()
         
-        override func viewDidLoad() {
+    @IBOutlet var RV: UIView!
+    override func viewDidLoad() {
             super.viewDidLoad()
             //Blure.isHidden = true
             tableView.delegate=self
             tableView.dataSource=self
-             
+        RV.layer.shadowColor = UIColor.black.cgColor
+        RV.layer.shadowOpacity = 0.3
+        RV.layer.shadowOffset = CGSize(width: -1, height: 1)
+        RV.layer.shadowRadius = 5
+        RV.layer.cornerRadius = 20
             AddView.layer.shadowColor = UIColor.black.cgColor
             AddView.layer.shadowOpacity = 0.5
             AddView.layer.shadowOffset = CGSize(width: -2, height: 2)
             AddView.layer.shadowRadius = 1
+        
+        Text.layer.cornerRadius = 20
+        Text.contentInset.left = 5
             model.delegate=self
             model.getRegulation()
 

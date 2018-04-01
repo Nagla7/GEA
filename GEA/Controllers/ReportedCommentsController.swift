@@ -10,35 +10,32 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
-class ReportedCommentsController: UIViewController, UITableViewDelegate, UITableViewDataSource,RegulationDelegate {
+class ReportedCommentsController: UIViewController, UITableViewDelegate, UITableViewDataSource , ReportsDelegate{
+  
     
-    
-    
-    
-    
-    //    @IBOutlet weak var Blure: UIVisualEffectView!
-    @IBOutlet weak var noRegulation: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var Text: UITextField!
-    @IBOutlet var AddView: UIView!
     var ref : DatabaseReference!
     var dbHandle:DatabaseHandle?
-    var Regulations = [NSDictionary]()
     var model=Model()
+    var Reports=[NSDictionary]()
+    var ReviewAtIndex : NSDictionary!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //Blure.isHidden = true
+        ref=Database.database().reference()
         tableView.delegate=self
         tableView.dataSource=self
+        model.Rdelegate = self as? ReportsDelegate
+        model.getReports()
         
-        AddView.layer.shadowColor = UIColor.black.cgColor
-        AddView.layer.shadowOpacity = 0.5
-        AddView.layer.shadowOffset = CGSize(width: -2, height: 2)
-        AddView.layer.shadowRadius = 1
-        model.delegate=self
-        model.getRegulation()
-        
+    }
+    func receiveReports(data: [NSDictionary]) {
+        if data.count != 0{
+            self.Reports=data
+            self.tableView.reloadData()}
+          
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,60 +50,50 @@ class ReportedCommentsController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Regulations.count
+        return Reports.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RegulationControllerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Vcell", for: indexPath) as! ReportsTableViewCell
+        let Report : NSDictionary?
+        cell.DeleteBtn.tag = indexPath.row
+        cell.DeleteBtn.addTarget(self, action: #selector(deleteReview), for: .touchUpInside)
         
-        let Regulation : NSDictionary?
+        cell.DismissBtn.tag = indexPath.row
+        cell.DismissBtn.addTarget(self, action: #selector(DismissReport), for: .touchUpInside)
         
-        Regulation = Regulations[indexPath.row]
+       Report = Reports[indexPath.row]
         
-        cell.RegulationText.text = Regulation?["Description"] as! String
-        cell.RegulationText.layer.masksToBounds=true
-        cell.RegulationText.layer.cornerRadius=10
+        cell.ReportedUser.text = Report!["ReportedUser"] as? String
+        cell.Review.text = Report!["Review"] as? String
+        cell.reason.text = Report!["Reason"] as? String
+        
         return(cell)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if touches.first?.view != AddView{
-            AddView.removeFromSuperview()}
-    }
-    
-    @IBAction func OpenAdd(_ sender: Any) {
-        //           Blure.isHidden = false
-        self.view.addSubview(AddView)
-        AddView.center = self.view.center
+    @objc func deleteReview(_ sender: UIButton?) {
         
+       
+          self.ReviewAtIndex = Reports[(sender?.tag)!]
+        let EID = self.ReviewAtIndex["EventID"] as! String
+        let Rid = self.ReviewAtIndex["ReviewId"] as! String
+        ref.child("ReportedReviews").child(self.ReviewAtIndex["ReportID"] as! String).removeValue()
+        ref.child("Reviews").child(EID).child(Rid).removeValue()
+   
+       self.Reports.remove(at: (sender?.tag)!)
+        model.getReports()
+        tableView.reloadData()
+    }
+
+    @objc func DismissReport(_ sender:  UIButton?) {
+        self.ReviewAtIndex = Reports[(sender?.tag)!]
+        ref.child("ReportedReviews").child(self.ReviewAtIndex["ReportID"] as! String).removeValue()
+        self.Reports.remove(at: (sender?.tag)!)
+        model.getReports()
+        tableView.reloadData()
     }
     
-    @IBAction func Publish(_ sender: UIButton) {
-        if (Text.text == nil){
-            AddView.removeFromSuperview()
-            //                Blure.isHidden = true
-        }
-            
-        else{
-            ref=Database.database().reference()
-            var reference  = ref.child("Regulations").childByAutoId()
-            reference.child("Description").setValue(Text.text)
-            AddView.removeFromSuperview()
-            //              Blure.isHidden = true
-            
-        }
-    }
-    
-    func receiveRegulation(data: [NSDictionary]) {
-        if data.count != 0{
-            self.Regulations=data
-            self.tableView.reloadData()
-            self.noRegulation.isHidden=true
-            self.tableView.isHidden=false}else{
-            self.noRegulation.isHidden=false
-            self.tableView.isHidden=true}
-    }
 }
 
 
