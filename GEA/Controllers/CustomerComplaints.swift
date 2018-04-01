@@ -13,36 +13,24 @@ import FirebaseAuth
 
 class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSource {
     //customer complaints table
-   var   ref = Database.database().reference()
+    var ref = Database.database().reference()
     var dbHandle : DatabaseHandle!
     @IBOutlet weak var complaintsTable: UITableView!
-    var complaints : [NSDictionary]!
+    var complaints = [NSDictionary]()
     
-    //table sections
-   // struct Objects{
-     //   var sectionName: String!
-      //  var sectionObjects: [String]!
-   // }
-  //  var objectsArray = [Objects]()
-    
-    
-    //let sections=["in progress","completed"]
-    //try
-    // var data = ["  ","   "]
-    //var p: Int!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      
+        complaintsTable.delegate = self
+        complaintsTable.dataSource = self
        
         ref.child("Complaint").observe(.value, with: { (snapshot) in
             if let deta=snapshot.value as? [String:Any]{
-                print(deta, "heeere " )
                 for (_,value) in deta{
                     let complaint=value as! NSDictionary
                     self.complaints.append(complaint)
                 }
-         
+                self.complaintsTable.reloadData()
             }
             else {print("there is no complaints")}
         })
@@ -50,8 +38,8 @@ class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSo
         //objectsArray = [Objects(sectionName: "In progress", sectionObjects: [" "," "]),Objects(sectionName: "Completed", sectionObjects: [" "," "])]
         
         //table delegate
-        complaintsTable.delegate = self
-        complaintsTable.dataSource = self}
+        
+    }
         
         ///////custom cell
       //  let nib = UINib(nibName: "CustomCell",bundle:nil)
@@ -69,13 +57,15 @@ class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSo
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return complaints.count
        // return objectsArray[section].sectionObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("%%%%%%bhb%%%%%%%%%%%%%%%%")
         let cell = complaintsTable.dequeueReusableCell(withIdentifier: "cell") as! complaintTableViewCell
         let complaint  = complaints[indexPath.row]
+        print(complaint,"%%%%%%%%%%%%%%%%%%%%%%")
         cell.EventName.text = complaint["EventName"] as! String
         return cell
         
