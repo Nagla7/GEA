@@ -1,5 +1,5 @@
 //
-//  ReportedCommentsController.swift
+//  ReportedCommentsC/Users/wejdan/Documents/GEA/GEA/Controllers/ReportedCommentsController.swiftontroller.swift
 //  
 //
 //  Created by njoool  on 30/03/2018.
