@@ -22,6 +22,7 @@
 		2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */; };
 		294A7F7F20711CF600DD40EC /* ReportedCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A7F7E20711CF600DD40EC /* ReportedCommentsController.swift */; };
 		294A7F812071249F00DD40EC /* complaintTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A7F802071249F00DD40EC /* complaintTableViewCell.swift */; };
+		294A7F872071FB6000DD40EC /* ReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A7F862071FB6000DD40EC /* ReqTableViewCell.swift */; };
 		29755F1E203965BC00BD6849 /* EditVenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29755F1D203965BC00BD6849 /* EditVenueViewController.swift */; };
 		29E36CAA2035811D008DD9FE /* VenuesTable1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */; };
 		29E36CAC20358E39008DD9FE /* GEASettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */; };
@@ -86,6 +87,7 @@
 		2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewCell.swift; sourceTree = "<group>"; };
 		294A7F7E20711CF600DD40EC /* ReportedCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedCommentsController.swift; sourceTree = "<group>"; };
 		294A7F802071249F00DD40EC /* complaintTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = complaintTableViewCell.swift; sourceTree = "<group>"; };
+		294A7F862071FB6000DD40EC /* ReqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqTableViewCell.swift; sourceTree = "<group>"; };
 		29755F1D203965BC00BD6849 /* EditVenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVenueViewController.swift; sourceTree = "<group>"; };
 		29E36CA92035811D008DD9FE /* VenuesTable1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesTable1ViewController.swift; sourceTree = "<group>"; };
 		29E36CAB20358E39008DD9FE /* GEASettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEASettingViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				0F893F4420215CFF00B76FA9 /* LoginViewController.swift */,
 				294A7F802071249F00DD40EC /* complaintTableViewCell.swift */,
 				1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */,
+				294A7F862071FB6000DD40EC /* ReqTableViewCell.swift */,
 				1DF9E547204C497300D2656E /* CustomerComplaints.swift */,
 			);
 			path = Controllers;
@@ -644,6 +647,7 @@
 				616DB9E3201F4D05000612D2 /* AppDelegate.swift in Sources */,
 				1DF725452023EEE000900254 /* DesignableTextField.swift in Sources */,
 				E33D7363204C710F00AB16FC /* Model.swift in Sources */,
+				294A7F872071FB6000DD40EC /* ReqTableViewCell.swift in Sources */,
 				1D68DC2E2036551700865E85 /* CustomCell.swift in Sources */,
 				610ECEE22070B67900FEC4B8 /* MultilineTextField.swift in Sources */,
 				29E36CAE20358E52008DD9FE /* AdminSettingViewController.swift in Sources */,
