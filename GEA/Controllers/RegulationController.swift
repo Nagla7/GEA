@@ -95,15 +95,22 @@ class RegulationController: UIViewController, UITableViewDelegate, UITableViewDa
                 AddView.removeFromSuperview()
 //                Blure.isHidden = true
             }
-                
-            else{
                 ref=Database.database().reference()
+                if( Text.text == ""){
+                    let alertController = UIAlertController(title: "Error", message: "Please enter a regulation", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    present(alertController, animated: true, completion: nil)}
+                
+                else{
                 var reference  = ref.child("Regulations").childByAutoId()
                 reference.child("Description").setValue(Text.text)
-                AddView.removeFromSuperview()
+                    AddView.removeFromSuperview()
+                    
+            }
   //              Blure.isHidden = true
                 
-            }
+            
         }
     
     func receiveRegulation(data: [NSDictionary]) {

@@ -28,9 +28,14 @@ class GEAUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRegulationsFailed() {
+        
+        let app = XCUIApplication()
+        app.buttons["contract (2)"].tap()
+        app.navigationBars["GEA.Regulation"].buttons["Add"].tap()
+        app.buttons["Publish"].tap()
+        app.alerts["Error"].buttons["OK"].tap()
+        
     }
     
 }

@@ -20,6 +20,7 @@
 		1DF847BE202C741C00DD91BD /* ResetPassowrdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */; };
 		1DF9E548204C497300D2656E /* CustomerComplaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E547204C497300D2656E /* CustomerComplaints.swift */; };
 		2911F5D120356F3F005E28A2 /* VenuesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */; };
+		293DB0642083ED6800AD198A /* ReqDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293DB0632083ED6800AD198A /* ReqDetailsViewController.swift */; };
 		294A7F7F20711CF600DD40EC /* ReportedCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A7F7E20711CF600DD40EC /* ReportedCommentsController.swift */; };
 		294A7F812071249F00DD40EC /* complaintTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A7F802071249F00DD40EC /* complaintTableViewCell.swift */; };
 		294A7F872071FB6000DD40EC /* ReqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294A7F862071FB6000DD40EC /* ReqTableViewCell.swift */; };
@@ -85,6 +86,7 @@
 		1DF847BD202C741C00DD91BD /* ResetPassowrdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassowrdController.swift; sourceTree = "<group>"; };
 		1DF9E547204C497300D2656E /* CustomerComplaints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerComplaints.swift; sourceTree = "<group>"; };
 		2911F5D020356F3F005E28A2 /* VenuesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesTableViewCell.swift; sourceTree = "<group>"; };
+		293DB0632083ED6800AD198A /* ReqDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqDetailsViewController.swift; sourceTree = "<group>"; };
 		294A7F7E20711CF600DD40EC /* ReportedCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportedCommentsController.swift; sourceTree = "<group>"; };
 		294A7F802071249F00DD40EC /* complaintTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = complaintTableViewCell.swift; sourceTree = "<group>"; };
 		294A7F862071FB6000DD40EC /* ReqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqTableViewCell.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				294A7F802071249F00DD40EC /* complaintTableViewCell.swift */,
 				1DF14ED5203DEA0C009E8FD0 /* LisenceRequests.swift */,
 				294A7F862071FB6000DD40EC /* ReqTableViewCell.swift */,
+				293DB0632083ED6800AD198A /* ReqDetailsViewController.swift */,
 				1DF9E547204C497300D2656E /* CustomerComplaints.swift */,
 			);
 			path = Controllers;
@@ -531,6 +534,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GEA/Pods-GEA-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -539,6 +543,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -627,6 +632,7 @@
 				61291390203207CC004AF11F /* TableViewCell.swift in Sources */,
 				29E36CAC20358E39008DD9FE /* GEASettingViewController.swift in Sources */,
 				E3D0D83020284832006ED71C /* TextFieldEffects.swift in Sources */,
+				293DB0642083ED6800AD198A /* ReqDetailsViewController.swift in Sources */,
 				61EA480120334D0100AE3373 /* RegulationControllerTableViewCell.swift in Sources */,
 				0F4EE308202A5B8800EE2725 /* CustomView.swift in Sources */,
 				1D68DC2A2036202000865E85 /* ManageAccounts.swift in Sources */,
@@ -823,6 +829,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8845V2P47V;
 				INFOPLIST_FILE = GEA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GP.GEA1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -840,6 +847,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8845V2P47V;
 				INFOPLIST_FILE = GEA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.GP.GEA1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

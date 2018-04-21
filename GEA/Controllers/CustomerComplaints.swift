@@ -11,25 +11,40 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class CustomerComplaints: UIViewController,UITableViewDelegate, UITableViewDataSource {
+   
+    @IBOutlet var nocomplaints: UIView!
     //customer complaints table
     var ref = Database.database().reference()
     var dbHandle : DatabaseHandle!
     @IBOutlet weak var complaintsTable: UITableView!
     var complaints = [NSDictionary]()
     var completed = [NSDictionary]()
+    var arr1 = false
+    var arr2 = false
 
     var index = 0
     
     @IBAction func index(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             index = 0
-           
+            if(complaints.count == 0){
+                 self.view.addSubview(self.nocomplaints)
+            }
+            else{
+                  self.nocomplaints.removeFromSuperview()
+            }
             
         }
         else{
             index = 1
-           
+            if(completed.count == 0){
+                self.view.addSubview(self.nocomplaints)
+            }
+            else{
+                self.nocomplaints.removeFromSuperview()
+            }
+            
         }
         complaintsTable.reloadData()
         
@@ -37,22 +52,33 @@ class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         complaintsTable.delegate = self
         complaintsTable.dataSource = self
+nocomplaints.frame = CGRect(x: 0, y:94, width: 375, height: 539)
         ref.child("Complaint").observe(.value, with: { (snapshot) in
             if let deta=snapshot.value as? [String:Any]{
+               self.nocomplaints.removeFromSuperview()
                 for (_,value) in deta{
                     let complaint=value as! NSDictionary
                     if(complaint["status"] as! String == "Completed" ){
-                        self.completed.append(complaint)}
+                        self.completed.append(complaint)
+                    }
                     else{
                         self.complaints.append(complaint)
                     }
                 }
                 self.complaintsTable.reloadData()
             }
-            else {print("there is no complaints")}
+            else {print("there is no complaints")
+              self.view.addSubview(self.nocomplaints)
+            }
         })
+        if(complaints.count == 0){
+            print("hihihhi")
+            self.view.addSubview(nocomplaints)
+        }
+        
         //sections objects array
         //objectsArray = [Objects(sectionName: "In progress", sectionObjects: [" "," "]),Objects(sectionName: "Completed", sectionObjects: [" "," "])]
         
@@ -89,7 +115,8 @@ class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-     
+       
+        
         
         print("%%%%%%bhb%%%%%%%%%%%%%%%%")
         let cell = complaintsTable.dequeueReusableCell(withIdentifier: "ccell") as! complaintTableViewCell
@@ -101,21 +128,29 @@ class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSo
        
         
          if(index == 0){
-            
+            if(complaints.count == 0){
+                self.view.addSubview(self.nocomplaints)
+            }
+            else{
+                self.nocomplaints.removeFromSuperview()
+            }
             let complaint  = complaints[indexPath.row]
             print(complaint,"%%%%%%%%%%%%%%%%%%%%%%")
             cell.EventName.text = complaint["EventName"] as? String
             cell.Discription.text = complaint["Discription"] as! String
-            cell.Email.text = complaint["CustomerEmail"] as? String
-            cell.phone.text = complaint["CustomerPhoneNum"] as? String
+            cell.Contact.tag = indexPath.row
+            arr1 = true
+            cell.Contact.addTarget(self, action: #selector(ContactInfo), for: .touchUpInside)
+            
             return cell}
         else{
+
             let complaint2  = completed[indexPath.row]
             cell2.EventName.text = complaint2["EventName"] as? String
             cell2.Discription.text = complaint2["Discription"] as! String
-            cell2.Email.text = complaint2["CustomerEmail"] as? String
-            cell2.phone.text = complaint2["CustomerPhoneNum"] as? String
-            
+            cell2.Contact.tag = indexPath.row
+            arr2 = true
+            cell2.Contact.addTarget(self, action: #selector(ContactInfo), for: .touchUpInside)
             return cell2
         }
         
@@ -151,11 +186,126 @@ class CustomerComplaints: UIViewController,UITableViewDelegate,UITableViewDataSo
             // let disapproveAction = UITableViewRowAction(style: .default, title:"in progress") {(action, indexPath) in
             // print("in progress")
             
-           
         }
         
         return [approveAction]}
     return[]
+    }
+    
+    @objc func ContactInfo(_ sender: UIButton) {
+        
+                if(index == 0){
+           
+                    let complaint  = complaints[sender.tag]
+                    
+                    let Email1 : String!
+                    Email1 = complaint["CustomerEmail"] as! String
+                    
+                    let phone1 : String!
+                    phone1 = complaint["CustomerPhoneNum"] as! String
+                    
+            let alertView = UIAlertController(title: "Contact Info", message: "Customer Contact Info", preferredStyle: .actionSheet)
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+              print("Cancel")
+            }
+            let Email = UIAlertAction(title: "Email: \(Email1!)"  , style: .default) { (action) in
+               // self.displayLbl.text = "Save Successfull"
+                print("email44")
+                
+                
+                let alert = UIAlertController(title: "Success" , message: "Email copied to the clipboard", preferredStyle: .alert)
+                
+                let cancel = UIAlertAction(title: "OK", style: .default) { (action) in
+                    print("Cancel")
+                }
+                alert.addAction(cancel)
+                print("hiiiii")
+                UIPasteboard.general.string = Email1!
+                self.present(alert, animated: true, completion: nil)
+                 }
+               
+            
+         
+            let phone = UIAlertAction(title: "Phone number: \(phone1!)" , style: .default) { (action) in
+                print("hiiiii")
+                
+                let alert = UIAlertController(title: "Success" , message: "Phone number copied to the clipboard", preferredStyle: .alert)
+                
+                let cancel = UIAlertAction(title: "OK", style: .default) { (action) in
+                    print("Cancel")
+                }
+                alert.addAction(cancel)
+                print("hiiiii")
+                UIPasteboard.general.string = phone1!
+                self.present(alert, animated: true, completion: nil)
+                }
+            
+            alertView.addAction(Email)
+            alertView.addAction(phone)
+            alertView.addAction(cancel)
+            
+            self.present(alertView, animated: true, completion: nil)
+        }
+        
+                if(index == 1){
+                    
+                    let complaint  = completed[sender.tag]
+                    
+                    let Email1 : String!
+                    Email1 = complaint["CustomerEmail"] as! String
+                    
+                    let phone1 : String!
+                    phone1 = complaint["CustomerPhoneNum"] as! String
+                    let alertView = UIAlertController(title: "Contact Info", message: "Customer Contact Info", preferredStyle: .actionSheet)
+                    
+                    let cancel = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+                        print("Cancel")
+                    }
+                    
+                    let Email = UIAlertAction(title: "Email: \(Email1!)"  , style: .default) { (action) in
+                        // self.displayLbl.text = "Save Successfull"
+                        print("email44")
+                        
+                        let alert = UIAlertController(title: "Success" , message: "Email copied to the clipboard", preferredStyle: .alert)
+                        
+                        let cancel = UIAlertAction(title: "OK", style: .default) { (action) in
+                            print("Cancel")
+                        }
+                        alert.addAction(cancel)
+                        print("hiiiii")
+                        UIPasteboard.general.string = Email1!
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
+                    
+                    
+                    let phone = UIAlertAction(title: "Phone number: \(phone1!)" , style: .default) { (action) in
+                       
+                        let alert = UIAlertController(title: "Success" , message: "Phone number copied to the clipboard", preferredStyle: .alert)
+                        
+                        let cancel = UIAlertAction(title: "OK", style: .default) { (action) in
+                            print("Cancel")
+                        }
+                        alert.addAction(cancel)
+                        print("hiiiii")
+                        UIPasteboard.general.string = phone1!
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+
+                     
+                   
+                    
+                    alertView.addAction(Email)
+                    alertView.addAction(phone)
+                    alertView.addAction(cancel)
+                    
+                    self.present(alertView, animated: true, completion: nil)
+            
+        }
+
     }
     
     

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F1CD64EE4FF3136437E08E682B27F41"
+               BlueprintIdentifier = "CF8C5D475ACD45DAD9EE519D43591BCF"
                BuildableName = "Pods_GEA.framework"
                BlueprintName = "Pods-GEA"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,7 +26,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -37,7 +36,6 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -47,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F1CD64EE4FF3136437E08E682B27F41"
+            BlueprintIdentifier = "CF8C5D475ACD45DAD9EE519D43591BCF"
             BuildableName = "Pods_GEA.framework"
             BlueprintName = "Pods-GEA"
             ReferencedContainer = "container:Pods.xcodeproj">

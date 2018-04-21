@@ -18,12 +18,14 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
 
     //lisence request table
     
+    @IBOutlet weak var SC: UISegmentedControl!
+    
     @IBOutlet weak var requestsTable: UITableView!
-    var Prequests : [NSDictionary]!
-    var Arequests : [NSDictionary]!
-    var Drequests : [NSDictionary]!
-    var index = 0
-    var ref : DatabaseReference!
+    var Prequests=[NSDictionary]()
+    var Arequests=[NSDictionary]()
+    var Drequests=[NSDictionary]()
+    var index = Int()
+    var ref = Database.database().reference()
     var dbHandle : DatabaseHandle!
 
     //table sections
@@ -45,7 +47,7 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
         case 2:
             index = 2
         default:
-            index = 0
+           print("defalut")
         }
       requestsTable.reloadData()
     }
@@ -54,7 +56,7 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
         super.viewDidLoad()
        
         //sections objects array
-      //  objectsArray = [Objects(sectionName: "", sectionObjects: [" "," "])]
+      //objectsArray = [Objects(sectionName: "", sectionObjects: [" "," "])]
         
         //table delegate
         requestsTable.delegate = self
@@ -64,15 +66,29 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
       //  let nib = UINib(nibName: "CustomCell",bundle:nil)
        // complaintTable.register(nib, forCellReuseIdentifier: "CustomCell")
         // requestsTable.register(nib, forCellReuseIdentifier: "CustomCell")
-        
-      /*  ref.child("IssuedEventsRequests").observe(.value, with: { (snapshot) in
-            if let deta=snapshot.value as? [String:Any]{
-                print(deta,"98989")
-                for (_,value) in deta{
+        if(index==0){
+            SC.selectedSegmentIndex=0
+        }
+        else if(index==1){
+            SC.selectedSegmentIndex = 1
+        }
+        else{
+            SC.selectedSegmentIndex = 2
+        }
+        ref.child("IssuedEventsRequests").observe(.value, with:{ (snapshot) in
+            if snapshot.exists(){
+                print("rere")
+                self.Prequests.removeAll()
+                self.Arequests.removeAll()
+                self.Drequests.removeAll()
+                var deta=snapshot.value as! [String:NSDictionary]
+                for(_ , value) in deta{
                     let req = value as! NSDictionary
-                    if(req["Status"] as! String == "Pending" ){
+                    print(req)
+                    print("heere i am")
+                    if(req["status"] as! String == "Pending" ){
                         self.Prequests.append(req)}
-                    else if (req["Status"] as! String == "Approved"){
+                    else if (req["status"] as! String == "Approved"){
                         self.Arequests.append(req)
                     }
                     else{
@@ -81,13 +97,15 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
                 }
                 self.requestsTable.reloadData()
             }
-            else {print("there is no requests")}
+            else {print("there is no requests")
+        }
         })
        print(Prequests)
-        print(Arequests)*/
+        print(Arequests)
+    
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       /* if(index == 0){
+        if(index == 0){
             return Prequests.count
         }
        else if(index == 1){
@@ -95,8 +113,8 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
         }
         else{
             return Drequests.count
-        }*/
-        return 5
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,21 +122,22 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
           let cell2 = requestsTable.dequeueReusableCell(withIdentifier: "ccell") as! ReqTableViewCell
           let cell3 = requestsTable.dequeueReusableCell(withIdentifier: "ccell") as! ReqTableViewCell
         
-      //  cell.textLabel?.text = objectsArray[indexPath.section].sectionObjects[indexPath.row]
         
         if(index == 0){
-          //  let req = Prequests[indexPath.row]
-         //   cell1.EventName.text = req["EventName"] as? String
+           let req = Prequests[indexPath.row]
+           cell1.EventName.text = req["EventName"] as? String
             return cell1
         }
+            
         else if(index == 1){
-         //   let req = Arequests[indexPath.row]
-          //  cell2.EventName.text = req["EventName"] as? String
+           let req = Arequests[indexPath.row]
+        cell2.EventName.text = req["EventName"]  as? String
             return cell2
         }
+            
         else{
-          //  let req = Drequests[indexPath.row]
-          //  cell3.EventName.text = req["EventName"] as? String
+            let req = Drequests[indexPath.row]
+           cell3.EventName.text = req["EventName"] as? String
             return cell3
         }
         
@@ -131,51 +150,41 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
     }
     
     //display sections on header of table
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var req = NSDictionary()
+        if(index == 0){
+            req = Prequests[indexPath.row]}
+        else   if( index == 1){
+             req = Arequests[indexPath.row]}
+        else{
+            req = Drequests[indexPath.row]
+        }
+        
+        
+        let SP = UIStoryboard(name: "Main" , bundle: nil)
+        let RInfo = SP.instantiateViewController(withIdentifier: "reqD") as! ReqDetailsViewController
+        RInfo.req = req
+        
+        if( index == 0 ){
+            RInfo.flag = false
+           
+        }
+        else{
+            RInfo.flag = true
+           
+        }
+        self.navigationController?.pushViewController(RInfo, animated: true)
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     /////////////////////////////////
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        //let delete = UITableViewRowAction(style: .destructive, title:"Delete", handler:{ action , indexPath in
-        //  print("delete")
-        var approveAction = UITableViewRowAction()
-        var disapproveAction = UITableViewRowAction()
-        if(indexPath.section == 0){
-         approveAction = UITableViewRowAction(style: .default, title:"accept") {(action, indexPath) in
-            print("yes")
-            /*
-             let req = self.Prequests[indexPath.row]
-             let rid = req["RID"] as! String
-             print(rid,"heeereee")
-             self.ref.child("IssuedEventsRequests").child(rid).updateChildValues(["Status" : "Approved"])
-             self.Prequests.removeAll()
-             self.Arequests.removeAll()
-             */
-        }
-        approveAction.backgroundColor =  UIColor(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-         disapproveAction = UITableViewRowAction(style: .default, title:"decline") {(action, indexPath) in
-            print("no")
-            /*
-             let req = self.Prequests[indexPath.row]
-             let rid = req["RID"] as! String
-             print(rid,"heeereee")
-             self.ref.child("IssuedEventsRequests").child(rid).updateChildValues(["Status" : "Declined"])
-             self.Prequests.removeAll()
-             self.Arequests.removeAll()
-             */
-        }
-       
-    return [disapproveAction,approveAction]
-        
-        }
-                
-        return[]
-        
-       
-    }
+   
+    
     
     
     

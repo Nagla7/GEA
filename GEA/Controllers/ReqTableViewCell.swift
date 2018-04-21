@@ -9,7 +9,7 @@
 import UIKit
 
 class ReqTableViewCell: UITableViewCell {
-    @IBOutlet weak var SPN: UILabel!
+   
     @IBOutlet weak var EventName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

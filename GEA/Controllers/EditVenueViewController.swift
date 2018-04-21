@@ -73,8 +73,23 @@ class EditVenueViewController: UIViewController , UITextFieldDelegate {
     
     
     @IBAction func DeleteVenueAction(_ sender: Any) {
-        self.ref.child("Venues").child(VID).removeValue()
-        _ = navigationController?.popViewController(animated: true)
+        
+        let alert = UIAlertController(title: "Warning" , message: "Are you sure you want to delete this venue?", preferredStyle: .alert)
+        
+        
+        let Delete = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+          
+            self.ref.child("Venues").child(self.VID).removeValue()
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            print("Cancel")
+        }
+        
+        alert.addAction(Delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
 

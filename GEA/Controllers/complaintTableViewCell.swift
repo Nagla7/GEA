@@ -9,13 +9,14 @@
 import UIKit
 
 class complaintTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var phone: UILabel!
-    @IBOutlet weak var Email: UILabel!
     @IBOutlet weak var Discription: UITextView!
     @IBOutlet weak var EventName: UILabel!
+    @IBOutlet weak var Contact: UIButton!
+    @IBOutlet weak var CV: UIView!
+
     override func awakeFromNib() {
-        Discription.layer.cornerRadius = 20
+       // Discription.layer.cornerRadius = 20
+    CV.layer.cornerRadius = 20
         super.awakeFromNib()
         // Initialization code
     }

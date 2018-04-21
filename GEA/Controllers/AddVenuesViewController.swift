@@ -14,7 +14,7 @@ import FirebaseStorage
 
 
 
-class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate
+class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePickerControllerDelegate, UINavigationControllerDelegate 
 {
     var databaseRef = Database.database().reference()
     var storageRef = Storage.storage().reference()

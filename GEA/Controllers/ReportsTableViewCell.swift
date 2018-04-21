@@ -12,6 +12,7 @@ class ReportsTableViewCell: UITableViewCell {
 
     @IBOutlet var ReportedUser: UILabel!
     
+    @IBOutlet weak var block: UIButton!
     @IBOutlet var view: UIView!
     @IBOutlet var reason: UILabel!
     @IBOutlet var Review: UITextView!
@@ -23,6 +24,7 @@ class ReportsTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
+        view.layer.cornerRadius = 20
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

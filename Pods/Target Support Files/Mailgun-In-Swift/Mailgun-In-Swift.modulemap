@@ -1,6 +1,0 @@
-framework module Mailgun_In_Swift {
-  umbrella header "Mailgun-In-Swift-umbrella.h"
-
-  export *
-  module * { export * }
-}
