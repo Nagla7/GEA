@@ -10,16 +10,28 @@ import UIKit
 import CoreData
 import Firebase
 import IQKeyboardManagerSwift
+import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    static var DEVICEID = String()
+    var ref:DatabaseReference?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        IQKeyboardManager.sharedManager().enable = true
+         self.ref = Database.database().reference()
+        IQKeyboardManager.shared.enable = true
+        UNUserNotificationCenter.current().delegate=self
+        UNUserNotificationCenter.current().requestAuthorization(options:[.alert,.sound]) { (success, error) in
+            if error != nil {
+                print("no auth")
+                
+            }  else{
+                print("Auth")
+            }
+        }
+        application.registerForRemoteNotifications()
         return true
     }
 
@@ -91,6 +103,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        guard  let newToken = InstanceID.instanceID().token() else {return}
+        AppDelegate.DEVICEID = newToken
+        if let user=Auth.auth().currentUser?.uid{
+            self.ref?.child("Users/\(user)").child("token").setValue(newToken)
+        }
+        connectToFCM()
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        guard let token = InstanceID.instanceID().token() else {return}
+        
+        AppDelegate.DEVICEID = token
+        if let user=Auth.auth().currentUser?.uid{
+           self.ref?.child("Users/\(user)").child("token").setValue(token)
+        }
+        print(token)
+        connectToFCM()
+    }
+    func connectToFCM(){Messaging.messaging().shouldEstablishDirectChannel = true}
 
+}
+extension AppDelegate:UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
 }
 

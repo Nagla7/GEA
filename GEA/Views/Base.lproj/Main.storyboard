@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZpJ-g5-FBj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZpJ-g5-FBj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -311,7 +312,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mHl-lj-cVd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4YU-zL-mfU"/>
+                    <navigationItem key="navigationItem" title="Reported Comments" id="4YU-zL-mfU"/>
                     <connections>
                         <outlet property="noCommentview" destination="Nk2-jU-qEW" id="zFm-bH-029"/>
                         <outlet property="tableView" destination="BhV-b1-3JE" id="63h-Bd-lGf"/>
@@ -336,7 +337,7 @@
             </objects>
             <point key="canvasLocation" x="-2658.4000000000001" y="765.96701649175418"/>
         </scene>
-        <!--Admin Setting View Controller-->
+        <!--Settings-->
         <scene sceneID="uUx-lU-Bgn">
             <objects>
                 <viewController id="TCQ-Zc-5Tf" customClass="AdminSettingViewController" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
@@ -388,7 +389,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LJ2-pQ-bA7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7m3-8A-NMW">
+                    <navigationItem key="navigationItem" title="Settings" id="7m3-8A-NMW">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="4Gc-yN-hsG">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0ki-Dm-AIs">
                                 <rect key="frame" x="307" y="7" width="52" height="30"/>
@@ -1212,7 +1213,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XIR-Nn-PKu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="09L-hJ-OmD"/>
+                    <navigationItem key="navigationItem" title="Manage Accounts" id="09L-hJ-OmD"/>
                     <connections>
                         <outlet property="addGea" destination="nYH-MQ-UmL" id="rgU-bJ-AGB"/>
                         <outlet property="segmentControl" destination="Bfd-mc-R1o" id="qwS-bl-3uW"/>
@@ -2252,7 +2253,7 @@
             </objects>
             <point key="canvasLocation" x="-1490" y="3251"/>
         </scene>
-        <!--Regulation Controller-->
+        <!--Regulations-->
         <scene sceneID="lXv-4A-EOr">
             <objects>
                 <viewController id="6pA-ct-8Mn" customClass="RegulationController" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
@@ -2271,6 +2272,8 @@
                                 <rect key="frame" x="16" y="99" width="343" height="490"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.00035532677429999998" green="0.68381398920000003" blue="0.67361468079999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="239" id="E8K-Zi-Tcp" customClass="RegulationControllerTableViewCell" customModule="GEA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="239"/>
@@ -2280,16 +2283,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBG-zV-3yu">
-                                                    <rect key="frame" x="0.0" y="11" width="345" height="218"/>
+                                                    <rect key="frame" x="0.0" y="11" width="345" height="63"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.4278413955" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.99989169840000003" green="1" blue="0.99988096950000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ila-OF-yfk">
+                                                    <rect key="frame" x="297" y="63" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <state key="normal" title="More"/>
+                                                    <connections>
+                                                        <action selector="more_pressed:" destination="E8K-Zi-Tcp" eventType="touchUpInside" id="CIV-Zi-n2a"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="RegulationText" destination="xBG-zV-3yu" id="pv4-4x-Za6"/>
+                                            <outlet property="more_btn" destination="Ila-OF-yfk" id="YV1-0x-H9k"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2302,7 +2315,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YHV-UT-iys"/>
                     </view>
-                    <navigationItem key="navigationItem" id="T6K-Sz-QrC">
+                    <navigationItem key="navigationItem" title="Regulations" id="T6K-Sz-QrC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mvp-Jp-AJv">
                             <connections>
                                 <action selector="OpenAdd:" destination="6pA-ct-8Mn" id="eD3-S5-je0"/>
@@ -2375,7 +2388,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="-370" y="4001"/>
+            <point key="canvasLocation" x="-370.39999999999998" y="4000.7496251874068"/>
         </scene>
         <!--Add Gea-->
         <scene sceneID="mHT-Wp-4xl">
@@ -2808,7 +2821,7 @@
             </objects>
             <point key="canvasLocation" x="-4383" y="1578"/>
         </scene>
-        <!--Venues Table1 View Controller-->
+        <!--Venues-->
         <scene sceneID="iRW-7a-1cF">
             <objects>
                 <viewController storyboardIdentifier="venue" id="PMi-w6-ndK" customClass="VenuesTable1ViewController" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
@@ -2872,7 +2885,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mLZ-oc-SdM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H1n-si-KKp">
+                    <navigationItem key="navigationItem" title="Venues" id="H1n-si-KKp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OAh-qi-GVG">
                             <connections>
                                 <segue destination="qZ9-RD-cFK" kind="push" id="alw-oi-ha9"/>
@@ -2888,7 +2901,7 @@
             </objects>
             <point key="canvasLocation" x="-620" y="13.043478260869566"/>
         </scene>
-        <!--Add Venues Controller-->
+        <!--Add Venue-->
         <scene sceneID="b1H-PE-Gdk">
             <objects>
                 <viewController id="qZ9-RD-cFK" customClass="AddVenuesController" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
@@ -3249,7 +3262,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Vqh-Kp-0SK"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9xN-ti-Xvt"/>
+                    <navigationItem key="navigationItem" title="Add Venue" id="9xN-ti-Xvt"/>
                     <connections>
                         <outlet property="Cost" destination="2pZ-Qc-4fc" id="GBC-wc-7g5"/>
                         <outlet property="Email" destination="XXd-zF-uZb" id="f8p-gc-DfW"/>
@@ -3265,7 +3278,7 @@
             </objects>
             <point key="canvasLocation" x="264.80000000000001" y="14.842578710644679"/>
         </scene>
-        <!--View Controller-->
+        <!--About-->
         <scene sceneID="DzD-tG-eLD">
             <objects>
                 <viewController id="KbE-h0-2VW" sceneMemberID="viewController">
@@ -3297,13 +3310,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wMQ-ym-18V"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Zsq-P5-lud"/>
+                    <navigationItem key="navigationItem" title="About" id="Zsq-P5-lud"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iN8-os-Afd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3098.4000000000001" y="3241.5292353823093"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Settings-->
         <scene sceneID="Nzl-lt-fS7">
             <objects>
                 <viewController id="V7i-2V-EOw" customClass="GEASettingViewController" customModule="GEA" customModuleProvider="target" sceneMemberID="viewController">
@@ -3373,7 +3386,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mtM-mJ-9c6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="iii-Ld-9aV">
+                    <navigationItem key="navigationItem" title="Settings" id="iii-Ld-9aV">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="wre-fQ-5qA">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Y1-LJ-rGH">
                                 <rect key="frame" x="284" y="2.5" width="75" height="39"/>
