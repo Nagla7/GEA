@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.2)
+  - DLRadioButton (1.4.12)
   - Firebase/Auth (4.13.0):
     - Firebase/Core
     - FirebaseAuth (= 4.6.1)
@@ -69,6 +70,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - DLRadioButton (~> 1.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -79,6 +81,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
@@ -95,6 +98,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: bb1527c4be08c4762bf160bd503062aeb68a4e52
+PODFILE CHECKSUM: 494438d3e6ada72ef25b12ebd185dd59361193e6
 
 COCOAPODS: 1.4.0

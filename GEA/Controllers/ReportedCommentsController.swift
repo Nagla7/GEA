@@ -1,6 +1,6 @@
 //
 //  ReportedCommentsC/Users/wejdan/Documents/GEA/GEA/Controllers/ReportedCommentsController.swiftontroller.swift
-//  
+//
 //
 //  Created by njoool  on 30/03/2018.
 //
@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ReportedCommentsController: UIViewController, UITableViewDelegate, UITableViewDataSource , ReportsDelegate{
-  
+    
     @IBOutlet var noCommentview: UIView!
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,7 +20,7 @@ class ReportedCommentsController: UIViewController, UITableViewDelegate, UITable
     var model=Model()
     var Reports=[NSDictionary]()
     var ReviewAtIndex : NSDictionary!
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +30,23 @@ class ReportedCommentsController: UIViewController, UITableViewDelegate, UITable
         tableView.dataSource=self
         model.Rdelegate = self as? ReportsDelegate
         model.getReports()
-        if (Reports.count == 0){
-             self.view.addSubview(noCommentview)
-        }
-        else{
-            noCommentview.removeFromSuperview()
-        }
+        
+        
     }
     func receiveReports(data: [NSDictionary]) {
         if data.count != 0{
             self.Reports=data
-            self.tableView.reloadData()}
-          
+            self.tableView.reloadData()
+            if (Reports.count == 0){
+                print("zeeerooo")
+                self.view.addSubview(noCommentview)
+            }
+            else{
+                print("98989")
+                noCommentview.removeFromSuperview()
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +77,7 @@ class ReportedCommentsController: UIViewController, UITableViewDelegate, UITable
         cell.block.tag = indexPath.row
         cell.block.addTarget(self, action: #selector(BlockUserAction), for: .touchUpInside)
         
-       Report = Reports[indexPath.row]
+        Report = Reports[indexPath.row]
         
         cell.ReportedUser.text = Report!["ReportedUser"] as? String
         cell.Review.text = Report!["Review"] as? String
@@ -82,8 +87,25 @@ class ReportedCommentsController: UIViewController, UITableViewDelegate, UITable
     }
     
     @objc func deleteReview(_ sender: UIButton?) {
+        let alert = UIAlertController(title: "Warning" , message: "Are you sure you want to delete this review?", preferredStyle: .alert)
         
-        deleteR(index: (sender?.tag)!)
+        
+        let Delete = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            self.deleteR(index: (sender?.tag)!)
+            
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            print("Cancel")
+        }
+        
+        alert.addAction(Delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        print("no")
+        
         
     }
     func deleteR(index: Int) {
@@ -98,33 +120,71 @@ class ReportedCommentsController: UIViewController, UITableViewDelegate, UITable
         model.getReports()
         tableView.reloadData()
     }
-
+    
     @objc func DismissReport(_ sender:  UIButton?) {
-        self.ReviewAtIndex = Reports[(sender?.tag)!]
-        ref.child("ReportedReviews").child(self.ReviewAtIndex["ReportID"] as! String).removeValue()
-        self.Reports.remove(at: (sender?.tag)!)
-        model.getReports()
-        tableView.reloadData()
+        let alert = UIAlertController(title: "Warning" , message: "Are you sure you want to dismiss this report?", preferredStyle: .alert)
+        
+        
+        let Delete = UIAlertAction(title: "Dismiss", style: .destructive) { (action) in
+            self.ReviewAtIndex = self.Reports[(sender?.tag)!]
+            self.ref.child("ReportedReviews").child(self.ReviewAtIndex["ReportID"] as! String).removeValue()
+            self.Reports.remove(at: (sender?.tag)!)
+            self.model.getReports()
+            self.tableView.reloadData()
+            
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            print("Cancel")
+        }
+        
+        alert.addAction(Delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        print("no")
+        
     }
     
     @objc func BlockUserAction(_ sender: UIButton) {
-        self.ReviewAtIndex = Reports[(sender.tag)]
-         var id = ""
-        ref.child("Customers").queryOrdered(byChild: "username").queryEqual(toValue: self.ReviewAtIndex["ReportedUser"] as! String ).observeSingleEvent(of: .value , with: { snapshot in
-            if snapshot.exists() {
-                //getting the email to login
-            
-                let data = snapshot.value as! [String: Any]
-                for (_,value) in data {
-                    let user = value as? NSDictionary
-                    id = user!["UID"] as! String
-                    self.ref.child("BlockedUsers").child(id).setValue(["username" : self.ReviewAtIndex["ReportedUser"] as! String])
-                    self.deleteR(index: sender.tag)
+        let alert = UIAlertController(title: "Warning" , message: "Are you sure you want to block this user?", preferredStyle: .alert)
+        
+        
+        let Delete = UIAlertAction(title: "Block", style: .destructive) { (action) in
+            self.ReviewAtIndex = self.Reports[(sender.tag)]
+            var id = ""
+            self.ref.child("Customers").queryOrdered(byChild: "username").queryEqual(toValue: self.ReviewAtIndex["ReportedUser"] as! String ).observeSingleEvent(of: .value , with: { snapshot in
+                if snapshot.exists() {
+                    //getting the email to login
+                    
+                    let data = snapshot.value as! [String: Any]
+                    for (_,value) in data {
+                        let user = value as? NSDictionary
+                        id = user!["UID"] as! String
+                        self.ref.child("BlockedUsers").child(id).setValue(["username" : self.ReviewAtIndex["ReportedUser"] as! String])
+                        self.deleteR(index: sender.tag)
+                    }
+                    
                 }
-    
-}
-        })
-}
+            })
+            
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            print("Cancel")
+        }
+        
+        alert.addAction(Delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        print("no")
+        
+        //----------
+        
+    }
 }
 
 

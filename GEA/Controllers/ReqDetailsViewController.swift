@@ -14,26 +14,26 @@ import FirebaseAuth
 class ReqDetailsViewController: UIViewController {
     @IBOutlet weak var approve: UIButton!
     @IBOutlet weak var decline: UIButton!
-    @IBOutlet weak var LocTitle: UILabel!
-    @IBOutlet weak var NumTicketLable: UILabel!
+    @IBOutlet weak var LocTitle: HoshiTextField!
+  
     var flag = Bool()
     @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var Audience: UILabel!
-    @IBOutlet weak var TP: UILabel!
-    @IBOutlet weak var ServiceProvider: UILabel!
-    @IBOutlet weak var category: UILabel!
+    @IBOutlet weak var Audience: HoshiTextField!
+    @IBOutlet weak var TP: HoshiTextField!
+    @IBOutlet weak var ServiceProvider: HoshiTextField!
+    @IBOutlet weak var category: HoshiTextField!
     @IBOutlet weak var Name: UILabel!
-    @IBOutlet weak var locationCapacity: UILabel!
-    @IBOutlet weak var attendance: UILabel!
+    @IBOutlet weak var locationCapacity: HoshiTextField!
+    @IBOutlet weak var attendance: HoshiTextField!
     @IBOutlet weak var Rules: UITextView!
-    @IBOutlet weak var Time: UILabel!
-    @IBOutlet weak var Date: UILabel!
-    @IBOutlet weak var Earning: UILabel!
-    @IBOutlet weak var cost: UILabel!
+    @IBOutlet weak var Time: HoshiTextField!
+    @IBOutlet weak var Date: HoshiTextField!
+
+    @IBOutlet weak var cost: HoshiTextField!
     @IBOutlet weak var Discription: UITextView!
-    @IBOutlet weak var TPLable: UILabel!
-    @IBOutlet weak var city: UILabel!
-    @IBOutlet weak var NumTicket: UILabel!
+  
+    @IBOutlet weak var city: HoshiTextField!
+    @IBOutlet weak var NumTicket: HoshiTextField!
     @IBOutlet weak var scroll: UIScrollView!
     var ref = Database.database().reference()
     var req = NSDictionary()
@@ -52,9 +52,26 @@ class ReqDetailsViewController: UIViewController {
                     let user = value as? NSDictionary
                    cn = user!["companyname"] as! String
                     self.ServiceProvider.text =  cn
+                    self.ServiceProvider.isEnabled = false
                 }
             }})
-                
+        
+        
+        
+        Audience.isEnabled = false
+        category.isEnabled = false
+        
+        locationCapacity.isEnabled = false
+        attendance.isEnabled = false
+        Time.isEnabled = false
+        Date.isEnabled = false
+        cost.isEnabled = false
+        city.isEnabled = false
+        LocTitle.isEnabled = false
+        NumTicket.isEnabled = false
+        TP.isEnabled = false
+        
+        
         
         Name.text = req["EventName"] as? String
         Audience.text =  req["audience"] as? String
@@ -65,14 +82,13 @@ class ReqDetailsViewController: UIViewController {
         attendance.text =  req["ExpectedAttendees"] as? String
         Time.text =  "\(req["OpenTime"]!) - \(req["CloseTime"]!)"
         Date.text =  "\(req["SDate"]!) - \(req["EDate"]!)"
-        Earning.text =  req["Earnings"] as? String
-        cost.text =  req["Cost"] as? String
+        cost.text =  "\(req["Cost"]!) - \(req["Earnings"]!)"
         city.text =  req["City"] as? String
         LocTitle.text = req["locTitle"] as? String
         if(req["NumOfTickets"] as! String == "0"){
-            NumTicketLable.text = "Ticket"
+            NumTicket.placeholder = "Ticket"
         NumTicket.text = "Free"
-          TPLable.isHidden = true
+          TP.isHidden = true
         }
 
         else{

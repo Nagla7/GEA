@@ -125,18 +125,58 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
         
         if(index == 0){
            let req = Prequests[indexPath.row]
+            ref.child("ServiceProviders").queryOrdered(byChild: "UID").queryEqual(toValue: req["SPID"] as! String).observeSingleEvent(of: .value , with: { snapshot in
+                if snapshot.exists() {
+                    //getting the email to login
+                    
+                    let data = snapshot.value as! [String: Any]
+                    for (_,value) in data {
+                        var cn = "df"
+                        let user = value as? NSDictionary
+                        cn = user!["companyname"] as! String
+                         cell1.serviceP.text = cn
+                    }
+                }})
+            
            cell1.EventName.text = req["EventName"] as? String
+           
             return cell1
         }
             
         else if(index == 1){
            let req = Arequests[indexPath.row]
+            ref.child("ServiceProviders").queryOrdered(byChild: "UID").queryEqual(toValue: req["SPID"] as! String).observeSingleEvent(of: .value , with: { snapshot in
+                if snapshot.exists() {
+                    //getting the email to login
+                    
+                    let data = snapshot.value as! [String: Any]
+                    for (_,value) in data {
+                        var cn = "df"
+                        let user = value as? NSDictionary
+                        cn = user!["companyname"] as! String
+                        cell2.serviceP.text = cn
+                    }
+                }})
+            
         cell2.EventName.text = req["EventName"]  as? String
             return cell2
         }
             
         else{
             let req = Drequests[indexPath.row]
+            ref.child("ServiceProviders").queryOrdered(byChild: "UID").queryEqual(toValue: req["SPID"] as! String).observeSingleEvent(of: .value , with: { snapshot in
+                if snapshot.exists() {
+                    //getting the email to login
+                    
+                    let data = snapshot.value as! [String: Any]
+                    for (_,value) in data {
+                        var cn = "df"
+                        let user = value as? NSDictionary
+                        cn = user!["companyname"] as! String
+                        cell3.serviceP.text = cn
+                    }
+                }})
+            
            cell3.EventName.text = req["EventName"] as? String
             return cell3
         }

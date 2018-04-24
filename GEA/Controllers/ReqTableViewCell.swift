@@ -11,6 +11,7 @@ import UIKit
 class ReqTableViewCell: UITableViewCell {
    
     @IBOutlet weak var EventName: UILabel!
+    @IBOutlet weak var serviceP: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

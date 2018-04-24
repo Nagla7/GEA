@@ -13,8 +13,17 @@ import FirebaseDatabase
 
 class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
+    @IBOutlet weak var CR: UILabel!
+    @IBOutlet weak var PN: UILabel!
+    @IBOutlet weak var E: UILabel!
+    @IBOutlet weak var Cn: UILabel!
     
-    
+    @IBOutlet weak var Un: UILabel!
+    @IBOutlet weak var N: UILabel!
+    @IBOutlet weak var declinesp: UIButton!
+    @IBOutlet weak var approvsp: UIButton!
+    @IBOutlet weak var ApproveS: UIView!
+    @IBOutlet weak var AS: UIView!
     @IBOutlet weak var addGea: UIButton!
     @IBOutlet weak var tableOne: UITableView! // gea
     @IBOutlet weak var tableTwo: UITableView! // customer
@@ -44,6 +53,11 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AS.layer.shadowColor = UIColor.black.cgColor
+       AS.layer.shadowOpacity = 0.5
+       AS.layer.shadowOffset = CGSize(width: -2, height: 2)
+        AS.layer.shadowRadius = 1
+         AS.layer.cornerRadius = 20
         
         //============The configurations of the tables===========
         
@@ -60,7 +74,10 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         tableOne.register(nib, forCellReuseIdentifier: "CustomCell")
         tableTwo.register(nib, forCellReuseIdentifier: "CustomCell")
         tableThree.register(nib, forCellReuseIdentifier: "CustomCell")
-        
+        tableOne.allowsSelection = false
+        tableTwo.allowsSelection = false
+        approvsp.isHidden = true
+        declinesp.isHidden = true
         
         //============Fetching data===========
         // 1- GEA
@@ -146,7 +163,7 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         {return Service[section].count}
     }
     
-    
+  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableOne.dequeueReusableCell(withIdentifier: "CustomCell") as! CustomCell
         
@@ -158,11 +175,50 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         if (SegmentedControlindex == 2)
         {cell.titleLabel.text = Service[indexPath.section][indexPath.row]?["username"] as? String
+            print(indexPath.section,"heere")
+            if(indexPath.section == 0){
+           approvsp.tag = indexPath.row
+           approvsp.addTarget(self, action: #selector(approve), for: .touchUpInside)
+            
+            declinesp.tag = indexPath.row
+            declinesp.addTarget(self, action: #selector(disapprove), for: .touchUpInside)  }
         }
         
         return cell
     }
     
+    
+    @IBAction func closeSup(_ sender: Any) {
+        ApproveS.removeFromSuperview()
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        if(tableView == tableThree){
+           view.addSubview(ApproveS)
+           ApproveS.center = self.view.center
+            if(indexPath.section == 0){
+                approvsp.isHidden = false
+                declinesp.isHidden = false
+              
+            }
+            else{
+                approvsp.isHidden = true
+                declinesp.isHidden = true
+            }
+            Un.text = Service[indexPath.section][indexPath.row]?["username"] as? String
+            Cn.text = Service[indexPath.section][indexPath.row]?["companyname"] as? String
+            N.text = Service[indexPath.section][indexPath.row]?["username"] as? String
+            E.text = Service[indexPath.section][indexPath.row]?["email"] as? String
+            CR.text = Service[indexPath.section][indexPath.row]?["commercialrecordnumber"] as? String
+            PN.text = Service[indexPath.section][indexPath.row]?["phonenumber"] as? String
+            }
+            
+        
+        else{
+           tableView.allowsSelection = false
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -201,6 +257,11 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if(self.SegmentedControlindex == 2 && indexPath.section == 0){
+            print("no")
+            return[]
+        }
+        else{
         let delete = UITableViewRowAction(style: .destructive, title:"Delete", handler:{ action , indexPath in
             //============Delete GEA===========
             if (self.SegmentedControlindex == 0){
@@ -219,71 +280,16 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
                 self.tableTwo.reloadData()}
             
             //============Delete Service===========
-            if (self.SegmentedControlindex == 2){
+            if (self.SegmentedControlindex == 2 && indexPath.section == 1 ){
                 self.ApprovedService.remove(at: indexPath.row)
                 self.ref?.child("ServiceProviders").child(self.keys4[indexPath.row]).removeValue()
                 self.keys4.remove(at: indexPath.row)
                 self.ApprovedService = [NSDictionary?]()
                 self.tableThree.reloadData()}
         })
-        
-        if(tableView == tableThree){
-            var section = 0
-            if let index = tableView.indexPathsForVisibleRows?.first?.section {
-                section = index
-            }
-            if(indexPath.section == 0){
-                
-                let approveAction = UITableViewRowAction(style: .default, title:"approve") {(action, indexPath) in
-                    self.ref.child("ApprovalRequests").child(self.keys3[indexPath.row]).observeSingleEvent(of: .value, with: { (snapshot) in
-                        let snapshot = snapshot.value as! [String: AnyObject]
-                        
-                        // fetech user details
-                        self.firstname = snapshot["firstname"] as! String
-                        self.lastname = snapshot["lastname"] as! String
-                        self.email = snapshot["email"] as! String
-                        self.phonenumber = snapshot["phonenumber"] as! String
-                        self.username = snapshot["username"] as! String
-                        self.companyname = snapshot["companyname"] as! String
-                        self.commercialrecordnumber = snapshot["commercialrecordnumber"] as! String
-                        self.password = snapshot["password"] as! String
-                        
-                        // create new user
-                        Auth.auth().createUser(withEmail: self.email, password: self.password) { (user, error) in
-                            if error == nil {
-                                
-                                self.ref.child("ServiceProviders").child(user!.uid).setValue(["firstname":self.firstname,"lastname":self.lastname,"email": self.email,"phonenumber":self.phonenumber,"username": self.username, "companyname":self.companyname, "commercialrecordnumber":self.commercialrecordnumber ,"UID": user!.uid])
-                                
-                                self.notApprovedService.remove(at: indexPath.row)
-                                self.ref?.child("ApprovalRequests").child(self.keys3[indexPath.row]).removeValue()
-                                self.keys3.remove(at: indexPath.row)
-                                self.popUpMessage(title: "Success", message: "Service provider account has been approved.")
-                                self.notApprovedService = [NSDictionary?]()
-                                self.ApprovedService = [NSDictionary?]()
-                                self.Service = [[NSDictionary?](),[NSDictionary?]()]
-                                self.tableThree.reloadData()
-                                // should send email
-                            } else {self.popUpMessage(title: "Error", message: (error?.localizedDescription)!)}
-                        }  })
-                }
-                
-                approveAction.backgroundColor =  UIColor(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-                let disapproveAction = UITableViewRowAction(style: .default, title:"disapprove") {(action, indexPath) in
-                    print("no")
-                    self.notApprovedService.remove(at: indexPath.row)
-                    self.ref?.child("ApprovalRequests").child(self.keys3[indexPath.row]).removeValue()
-                    self.keys3.remove(at: indexPath.row)
-                    self.popUpMessage(title: "Success", message: "Service provider account has been disapproved.")
-                    // should send email
-                    self.notApprovedService = [NSDictionary?]()
-                    self.Service = [[NSDictionary?](),[NSDictionary?]()]
-                    self.tableThree.reloadData()}
-                
-                return [approveAction,disapproveAction]
-            }
+        return [delete]
         }
         
-        return [delete]
     }
     
     // ================== POP UP MESSAGE ======================
@@ -293,5 +299,90 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         alert.addAction(ok)
         self.present(alert, animated: true, completion: nil)
     }
+    @objc func disapprove(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Warning" , message: "Are you sure you want to disapprove this user?", preferredStyle: .alert)
+        
+        
+        let Delete = UIAlertAction(title: "Disapprove", style: .destructive) { (action) in
+            self.notApprovedService.remove(at: sender.tag)
+            self.ref?.child("ApprovalRequests").child(self.keys3[sender.tag]).removeValue()
+            self.keys3.remove(at: sender.tag)
+            self.popUpMessage(title: "Success", message: "Service provider account has been disapproved.")
+            // should send email
+            self.notApprovedService = [NSDictionary?]()
+            self.Service = [[NSDictionary?](),[NSDictionary?]()]
+            self.tableThree.reloadData()
+            self.ApproveS.removeFromSuperview()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            print("Cancel")
+        }
+        
+        alert.addAction(Delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        print("no")
+        
+        
+    }
+    
+    @objc func approve(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Warning" , message: "Are you sure you want to approve this user?", preferredStyle: .alert)
+        
+        
+        let Delete = UIAlertAction(title: "Approve", style: .default) { (action) in
+            
+            self.ref.child("ApprovalRequests").child(self.keys3[sender.tag]).observeSingleEvent(of: .value, with: { (snapshot) in
+                let snapshot = snapshot.value as! [String: AnyObject]
+                
+                // fetech user details
+                self.firstname = snapshot["firstname"] as! String
+                self.lastname = snapshot["lastname"] as! String
+                self.email = snapshot["email"] as! String
+                self.phonenumber = snapshot["phonenumber"] as! String
+                self.username = snapshot["username"] as! String
+                self.companyname = snapshot["companyname"] as! String
+                self.commercialrecordnumber = snapshot["commercialrecordnumber"] as! String
+                self.password = snapshot["password"] as! String
+                
+                // create new user
+                Auth.auth().createUser(withEmail: self.email, password: self.password) { (user, error) in
+                    if error == nil {
+                        
+                        self.ref.child("ServiceProviders").child(user!.uid).setValue(["firstname":self.firstname,"lastname":self.lastname,"email": self.email,"phonenumber":self.phonenumber,"username": self.username, "companyname":self.companyname, "commercialrecordnumber":self.commercialrecordnumber ,"UID": user!.uid])
+                        
+                        self.notApprovedService.remove(at: sender.tag)
+                        self.ref?.child("ApprovalRequests").child(self.keys3[sender.tag]).removeValue()
+                        self.keys3.remove(at: sender.tag)
+                        self.popUpMessage(title: "Success", message: "Service provider account has been approved.")
+                        self.notApprovedService = [NSDictionary?]()
+                        self.ApprovedService = [NSDictionary?]()
+                        self.Service = [[NSDictionary?](),[NSDictionary?]()]
+                        self.tableThree.reloadData()
+                        // should send email
+                    } else {self.popUpMessage(title: "Error", message: (error?.localizedDescription)!)}
+                }  })
+            self.ApproveS.removeFromSuperview()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            print("Cancel")
+        }
+        
+        alert.addAction(Delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        print("no")
+    }
+
+        
+        
+        
+
     
 }
