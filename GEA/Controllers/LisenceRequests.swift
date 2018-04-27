@@ -102,16 +102,39 @@ class LisenceRequests: UIViewController,UITableViewDelegate,UITableViewDataSourc
         })
        print(Prequests)
         print(Arequests)
-    
+        if(Prequests.count == 0){
+            requestsTable.isHidden = true
+        }
+        else{
+        requestsTable.isHidden = false
+        }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(index == 0){
+            if(Prequests.count == 0){
+                requestsTable.isHidden = true
+            }
+            else{
+                requestsTable.isHidden = false
+            }
             return Prequests.count
         }
        else if(index == 1){
+            if(Arequests.count == 0){
+                requestsTable.isHidden = true
+            }
+            else{
+                requestsTable.isHidden = false
+            }
             return Arequests.count
         }
         else{
+            if(Drequests.count == 0){
+                requestsTable.isHidden = true
+            }
+            else{
+                requestsTable.isHidden = false
+            }
             return Drequests.count
         }
         

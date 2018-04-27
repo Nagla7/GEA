@@ -162,7 +162,7 @@ class ReportedCommentsController: UIViewController, UITableViewDelegate, UITable
                     for (_,value) in data {
                         let user = value as? NSDictionary
                         id = user!["UID"] as! String
-                        self.ref.child("BlockedUsers").child(id).setValue(["username" : self.ReviewAtIndex["ReportedUser"] as! String])
+                        self.ref.child("Customers").child(id).child("blocked").setValue("true")
                         self.deleteR(index: sender.tag)
                     }
                     

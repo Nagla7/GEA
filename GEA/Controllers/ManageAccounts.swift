@@ -85,12 +85,14 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         ref=Database.database().reference()
         dbHandle = ref?.child("Users").observe(.value, with: { (snapshot) in
             if let deta=snapshot.value as? [String:Any]{
+                self.Gea.removeAll()
                 for (key,value) in deta{
                     let gea=value as! NSDictionary
                     type = gea["type"] as! String
                     if (type == "gea"){
                         self.Gea.append(gea)
                         self.keys1.append(key)
+                        self.tableOne.reloadData()
                     }}
                 self.tableOne.reloadData()
             } else {print("There are no GEA staff!")}
@@ -99,10 +101,12 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
         // 2- Customers
         dbHandle = ref?.child("Customers").observe(.value, with: { (snapshot) in
             if let deta=snapshot.value as? [String:Any]{
+                self.Customers.removeAll()
                 for (key,value) in deta{
                     let customer=value as! NSDictionary
                     self.Customers.append(customer)
                     self.keys2.append(key)
+                    self.tableTwo.reloadData()
                 }
                 self.tableTwo.reloadData()
             } else {print("There are no customers!")}
@@ -131,6 +135,7 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
                     self.ApprovedService.append(service)
                     self.keys4.append(key)
                 }
+                self.Service.removeAll()
                 self.Service  = [self.notApprovedService,self.ApprovedService]
                 self.tableThree.reloadData()
             } else {print("There are no service providers!")}
@@ -208,7 +213,7 @@ class ManageAccounts: UIViewController, UITableViewDelegate,UITableViewDataSourc
             }
             Un.text = Service[indexPath.section][indexPath.row]?["username"] as? String
             Cn.text = Service[indexPath.section][indexPath.row]?["companyname"] as? String
-            N.text = Service[indexPath.section][indexPath.row]?["username"] as? String
+            N.text =  "\(Service[indexPath.section][indexPath.row]!["firstname"]!) \(Service[indexPath.section][indexPath.row]!["lastname"]!)"
             E.text = Service[indexPath.section][indexPath.row]?["email"] as? String
             CR.text = Service[indexPath.section][indexPath.row]?["commercialrecordnumber"] as? String
             PN.text = Service[indexPath.section][indexPath.row]?["phonenumber"] as? String

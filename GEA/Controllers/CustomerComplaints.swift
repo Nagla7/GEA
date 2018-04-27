@@ -22,21 +22,21 @@ class CustomerComplaints: UIViewController,UITableViewDelegate, UITableViewDataS
     var completed = [NSDictionary]()
     var arr1 = false
     var arr2 = false
-
     var index = 0
     
     @IBAction func index(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            index = 0
+        switch sender.selectedSegmentIndex {
+        case 0:
             if(complaints.count == 0){
-                 self.view.addSubview(self.nocomplaints)
+                
+                self.view.addSubview(self.nocomplaints)
             }
             else{
-                  self.nocomplaints.removeFromSuperview()
+                self.nocomplaints.removeFromSuperview()
             }
-            
-        }
-        else{
+            index = 0
+            break
+        case 1:
             index = 1
             if(completed.count == 0){
                 self.view.addSubview(self.nocomplaints)
@@ -44,20 +44,34 @@ class CustomerComplaints: UIViewController,UITableViewDelegate, UITableViewDataS
             else{
                 self.nocomplaints.removeFromSuperview()
             }
-            
+            break
+        default:
+            if(complaints.count == 0){
+                
+                self.view.addSubview(self.nocomplaints)
+                complaintsTable.isHidden = true
+            }
+            else{
+                self.nocomplaints.removeFromSuperview()
+                  complaintsTable.isHidden = false
+            }
         }
         complaintsTable.reloadData()
         
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+       
         complaintsTable.delegate = self
         complaintsTable.dataSource = self
 nocomplaints.frame = CGRect(x: 0, y:94, width: 375, height: 539)
         ref.child("Complaint").observe(.value, with: { (snapshot) in
             if let deta=snapshot.value as? [String:Any]{
+                self.complaints.removeAll()
+                self.completed.removeAll()
                self.nocomplaints.removeFromSuperview()
                 for (_,value) in deta{
                     let complaint=value as! NSDictionary
@@ -68,16 +82,19 @@ nocomplaints.frame = CGRect(x: 0, y:94, width: 375, height: 539)
                         self.complaints.append(complaint)
                     }
                 }
+                if(self.complaints.count == 0){
+                    self.view.addSubview(self.nocomplaints)
+                }
+                else{
+                    self.nocomplaints.removeFromSuperview()
+                }
                 self.complaintsTable.reloadData()
             }
             else {print("there is no complaints")
               self.view.addSubview(self.nocomplaints)
             }
         })
-        if(complaints.count == 0){
-            print("hihihhi")
-            self.view.addSubview(nocomplaints)
-        }
+        
         
         //sections objects array
         //objectsArray = [Objects(sectionName: "In progress", sectionObjects: [" "," "]),Objects(sectionName: "Completed", sectionObjects: [" "," "])]
@@ -129,9 +146,11 @@ nocomplaints.frame = CGRect(x: 0, y:94, width: 375, height: 539)
         
          if(index == 0){
             if(complaints.count == 0){
+                complaintsTable.isHidden = true
                 self.view.addSubview(self.nocomplaints)
             }
             else{
+                 complaintsTable.isHidden = false
                 self.nocomplaints.removeFromSuperview()
             }
             let complaint  = complaints[indexPath.row]
@@ -144,7 +163,7 @@ nocomplaints.frame = CGRect(x: 0, y:94, width: 375, height: 539)
             
             return cell}
         else{
-
+            complaintsTable.isHidden = false
             let complaint2  = completed[indexPath.row]
             cell2.EventName.text = complaint2["EventName"] as? String
             cell2.Discription.text = complaint2["Discription"] as! String

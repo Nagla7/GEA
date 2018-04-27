@@ -78,7 +78,7 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
             
             if let imageData: Data = UIImagePNGRepresentation(self.vImg.image!)!
             {
-                let VPicStorageRef = self.storageRef.child("Venue/\(self.VenueName.text)/Pic")
+                let VPicStorageRef = self.storageRef.child("Venue/\(self.randomID)/Pic")
                 let uploadTask = VPicStorageRef.putData(imageData, metadata: nil)
                 {metadata,error in
                     if(error == nil)
@@ -87,16 +87,16 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
                         self.databaseRef.child("Venues").child(self.randomID).child("pic").setValue(String(describing:downloadUrl!))
                         _ = self.navigationController?.popViewController(animated: true)
                         
-                        let SP = UIStoryboard(name: "Main" , bundle: nil)
-                        let RInfo = SP.instantiateViewController(withIdentifier: "venue") as! VenuesTable1ViewController
-                        self.dismiss(animated: true, completion: nil)
+                      
                     }
                     else {print(error!.localizedDescription)}
                 }
             }
-            
+            let SP = UIStoryboard(name: "Main" , bundle: nil)
+            let RInfo = SP.instantiateViewController(withIdentifier: "venue") as! VenuesTable1ViewController
+            self.dismiss(animated: true, completion: nil)
         }
-        
+     
     }
     //___________Fields_______________
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -181,4 +181,3 @@ class AddVenuesController: UIViewController, UITextFieldDelegate , UIImagePicker
     }
     
 }
-

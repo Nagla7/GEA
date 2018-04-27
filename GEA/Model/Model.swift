@@ -56,6 +56,7 @@ class Model{
         var Reports=[NSDictionary]()
         dbHandle = ref?.child("ReportedReviews").observe(.value, with: { (snapshot) in
             if let deta=snapshot.value as? [String:Any]{
+                Reports.removeAll()
                 print(deta)
                 for (_,value) in deta{
                     let Report=value as! NSDictionary
